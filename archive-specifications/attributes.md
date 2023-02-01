@@ -37,6 +37,8 @@
 
 ## DRS elements
 
+The DRS element values must consist of the characters a-z, A-Z, 0-9 and '-' (dash). No other character is allowed. The terms in brackets following the DRS element names in the list below indicate whether the values are prescribed ('single value’), have to be taken from a fixed list of values ('CV'), have to be registered within CORDEX ('CV to register'), or can be chosen freely (‘free string’). Note that most elements must have the same value as a mandatory NetCDF global attribute. 
+
 * `variable_id`: (CV) is the short name of the variable. The name is taken from the [CORDEX-CMIP6 Variable List](https://cordex.org/experiment-guidelines/cordex-cmip6/data-request) or CMOR tables (… link …).
 
 * `domain_id`: (CV) is the name assigned to each of the CORDEX regions and includes a flag for resolution as listed in (… link …). 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Markdown Files &#8212; CORDEX archive specifications</title>
+    <title>Global attributes &#8212; CORDEX archive specifications</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Content with notebooks" href="notebooks.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,9 +113,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="attributes.html">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Global attributes
   </a>
  </li>
@@ -217,7 +219,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wcrp-cordex/CORDEX archive specifications/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wcrp-cordex/CORDEX archive specifications/issues/new?title=Issue%20on%20page%20%2Fattributes.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -245,7 +247,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/markdown.md"
+        <a href="_sources/attributes.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -305,23 +307,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
+  <a class="reference internal nav-link" href="#required-global-attributes">
+   Required global attributes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-roles-and-directives">
-   Sample Roles and Directives
+  <a class="reference internal nav-link" href="#recommended">
+   Recommended
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-more">
-   Learn more
+  <a class="reference internal nav-link" href="#drs-elements">
+   DRS elements
   </a>
  </li>
 </ul>
@@ -333,7 +330,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Markdown Files</h1>
+                <h1>Global attributes</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -344,23 +341,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
+  <a class="reference internal nav-link" href="#required-global-attributes">
+   Required global attributes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-roles-and-directives">
-   Sample Roles and Directives
+  <a class="reference internal nav-link" href="#recommended">
+   Recommended
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-more">
-   Learn more
+  <a class="reference internal nav-link" href="#drs-elements">
+   DRS elements
   </a>
  </li>
 </ul>
@@ -373,58 +365,62 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="global-attributes">
+<h1>Global attributes<a class="headerlink" href="#global-attributes" title="Permalink to this headline">#</a></h1>
+<section id="required-global-attributes">
+<h2>Required global attributes<a class="headerlink" href="#required-global-attributes" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Conventions</span></code> () - Climate and Forecast (CF) convention version (always 1.10 ???)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activity_id</span></code> (CV) - activity  identifier ( RCM, ESD and FPS ??? )</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contact</span></code> (free text) - contact information of the institution that is responsible for CORDEX simulations (avoid personal contact information)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">creation_date</span></code> (build rules) - date when file was created in format  YYYY-MM-DDTHH:MM:SSZ  (e.g., “2023-01-15T14:30:23Z”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">domain</span></code> (CV) - name of the CORDEX region (link)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">domain_id</span></code> (CV) - an identifier assigned to each CORDEX region including a flag for resolution (link)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driving_experiment</span></code> (CV) - short description of the CMIP6 experiments (link)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driving_experiment_id</span></code> (CV) - root identifier of the CMIP6 experiments (link)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driving_institution_id</span></code> (CV) - an identifier of the institution that is responsible for the driving CMIP6 simulation (link)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driving_source_id</span></code> (CV) - CMIP6 model identifier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driving_variant_label</span></code> - “variant” label of the driving CMIP6 simulation (e.g. “r1i1p1f1” etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frequency</span></code> (CV) -  sampling frequency (day, mon, 6hr, 3hr, 1hr)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">institution</span></code> (CV) - full name of institution that is responsible for CORDEX simulations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">institution_id</span></code> (CV) - an identifier of institution that is responsible for CORDEX simulations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mip_era</span></code> (CV) - determine what cycle of CMIP defines experiment and data specifications (always ‘CMIP6’)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">product</span></code> (CV) - product type (‘model-output’ and ‘esd-output’ ??? )</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">project_id</span></code> (CV) - project identifier (always CORDEX)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">realm</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code> (some build rules) - full model name/version and components (aerosol, atmos, land etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source_id</span></code> (CV) - model identifier (link)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source_type</span></code> (CV) - model configuration (RCM, ARCM ???)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source_configuration_id</span></code> ???</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tracking_id</span></code> (structured form with some CV) - unique file identifier (note 15 in <a class="reference external" href="https://docs.google.com/document/d/1h0r8RZr_f3-8egBMMh7aqLwy3snpD6_MrDz1q8n5XUk/edit">CMIP6 DRS</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">variable_id</span></code> (CV) - variable identifier (link to the CMOR tables)</p></li>
+</ul>
 </section>
-<section id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Permalink to this headline">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
+<section id="recommended">
+<h2>Recommended<a class="headerlink" href="#recommended" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">comment</span></code> (not mandatory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">history</span></code> (not mandatory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> (not mandatory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">references</span></code> (not mandatory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attribution</span></code> (CV) - fixed attribute that attributes driving data ??.</p></li>
+</ul>
 </section>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
-</div>
-</section>
-<section id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Permalink to this headline">#</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
+<section id="drs-elements">
+<h2>DRS elements<a class="headerlink" href="#drs-elements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">variable_id</span></code>: (CV) is the short name of the variable. The name is taken from the <a class="reference external" href="https://cordex.org/experiment-guidelines/cordex-cmip6/data-request">CORDEX-CMIP6 Variable List</a> or CMOR tables (… link …).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">domain_id</span></code>: (CV) is the name assigned to each of the CORDEX regions and includes a flag for resolution as listed in (… link …).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driving_source_id</span></code>: (CV) is an identifier of the driving data. The name consists of a model identifier. For reanalysis driven runs this is the name of the reanalysis data (ERA5). For runs driven by CMIP6 model data this is the associated CMIP6 source_id, which can be found in the <a class="reference external" href="https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html">CMIP6 source id CV</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driving_experiment_id</span></code>: (CV) is either “evaluation” for the ERA5-driven experiment or the value of the CMIP6 experiment_id from the ScenarioMIP activity or “historical” for the historical experiment from CMIP. The values for experiment_id can be found in the <a class="reference external" href="https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html">CMIP6 experiment id CV</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driving_variant_label</span></code>: (CV) identifies the ensemble member of the CMIP6 experiment that produced the forcing data. It has to have the same value as the CMIP6 variant_label. For the evaluation experiment it has to be “r1i1p1f1”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">institution_id</span></code>: (CV) is an identifier for the institution that is responsible for generating and providing CORDEX simulations. All CORDEX Institutions must be registered to publish their simulations on ESGF. Instructions on how to register an institution and the actual state of the CV is found (… links …).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source_id</span></code>: (CV to register) is an identifier (acronym) of the CORDEX RCM. All CORDEX RCMs have to be registered to publish their simulations on ESGF. Instructions on how to register a RCM and the actual state of the CV is found (… links …).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source_configuration_id</span></code>: (free string) identifies simulations with different combinations of parameterization schemes or changes in parameters for existing schemes. This DRS element can also be used to identify technical reruns related for example to configuration errors. Major upgrades and improvements should be reflected in the RCMModelName.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frequency</span></code>: (CV) is the output frequency indicator: 1hr - 1 hourly, 3hr - 3 hourly, 6hr - 6 hourly, day=daily, mon=monthly, and fx=invariant fields.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Additional depedent attributes that give more detailed meta info will be derived and can be filled automatically.</p>
 </section>
 </section>
 
@@ -455,6 +451,20 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="notebooks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Content with notebooks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

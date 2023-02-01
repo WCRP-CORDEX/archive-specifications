@@ -67,7 +67,7 @@ def plot_domain(domain_id, figsize=None):
     import matplotlib.pyplot as plt
 
     if figsize is None:
-        figsize = (20, 10)
+        figsize = (10, 10)
     rotated = get_ccrs(domain_id)
     cenlon, cenlat = transform_center(*get_center(domain_id), rotated)
     print(cenlon, cenlat)

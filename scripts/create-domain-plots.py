@@ -1,8 +1,13 @@
+from os import path as op
+
 import cartopy.crs as ccrs
 import geopandas as gpd
 import pandas as pd
 from pyproj import CRS
 from shapely.geometry import Polygon
+
+bookpath = "archive-specifications"
+figpath = op.join(bookpath, "figs")
 
 df = pd.read_csv(
     "https://raw.githubusercontent.com/WCRP-CORDEX/domain-tables/main/rotated-latitude-longitude.csv",
@@ -102,12 +107,27 @@ def plot_domain(domain_id, figsize=None):
         lw=2.0,
     )
 
-    plt.savefig(f"{domain_id}.png")
+    plt.savefig(op.join(figpath, f"{domain_id}.png"))
 
     return
+
+
+def create_subsection(domain_id):
+    text = "## {d}\n\n"
+    text += "![domain_id](figs/{d}.png)\n"
+    return text.format(d=domain_id)
+
+
+def create_domain_section(template):
+    sections = "\n".join(create_subsection(d) for d in df.index)
+    with open(template, "r") as f:
+        tpl = f.read()
+    with open(op.join(bookpath, "domains.md"), "w") as f:
+        f.write(tpl.format(subsections=sections))
 
 
 if __name__ == "__main__":
     for domain_id in df.index:
         print(domain_id)
         plot_domain(domain_id)
+    create_domain_section(template=op.join(bookpath, "domains.tpl"))

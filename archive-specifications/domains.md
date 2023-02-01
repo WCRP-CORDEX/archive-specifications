@@ -1,60 +1,53 @@
----
-jupytext:
-  cell_metadata_filter: -all
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Domains
 
-Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See [the Notebooks with MyST Markdown documentation](https://jupyterbook.org/file-types/myst-notebooks.html) for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.
+## SAM-11
 
-## An example cell
+![domain_id](figs/SAM-11.png)
 
-With MyST Markdown, you can define code cells with a directive like so:
+## CAM-11
 
-```{code-cell}
-print(2 + 2)
-```
+![domain_id](figs/CAM-11.png)
 
-```{code-cell}
-import pandas as pd
-df = pd.read_csv("https://raw.githubusercontent.com/WCRP-CORDEX/domain-tables/main/boundaries.csv", index_col="domain_id")
-df
-```
+## NAM-11
 
-When your book is built, the contents of any `{code-cell}` blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.
+![domain_id](figs/NAM-11.png)
 
-```{seealso}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
+## EUR-11
 
-## Create a notebook with MyST Markdown
+![domain_id](figs/EUR-11.png)
 
-MyST Markdown notebooks are defined by two things:
+## AFR-11
 
-1. YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-   See the YAML at the top of this page for example.
-2. The presence of `{code-cell}` directives, which will be executed with your book.
+![domain_id](figs/AFR-11.png)
 
-That's all that is needed to get started!
+## WAS-11
 
-## Quickly add YAML metadata for MyST Notebooks
+![domain_id](figs/WAS-11.png)
 
-If you have a markdown file and you'd like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:
+## EAS-11
 
-```
-jupyter-book myst init path/to/markdownfile.md
-```
+![domain_id](figs/EAS-11.png)
+
+## CAS-11
+
+![domain_id](figs/CAS-11.png)
+
+## AUS-11
+
+![domain_id](figs/AUS-11.png)
+
+## ANT-11
+
+![domain_id](figs/ANT-11.png)
+
+## ARC-11
+
+![domain_id](figs/ARC-11.png)
+
+## MED-11
+
+![domain_id](figs/MED-11.png)
+
+## MNA-11
+
+![domain_id](figs/MNA-11.png)

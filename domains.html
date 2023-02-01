@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Global attributes" href="attributes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,10 +112,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="attributes.html">
    Global attributes
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Domains
   </a>
  </li>
 </ul>
@@ -168,35 +174,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/wcrp-cordex/archive-specifications/main?urlpath=tree/docs/domains.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -264,23 +241,6 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/domains.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
         <a href="_sources/domains.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -341,18 +301,68 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example-cell">
-   An example cell
+  <a class="reference internal nav-link" href="#sam-11">
+   SAM-11
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">
-   Create a notebook with MyST Markdown
+  <a class="reference internal nav-link" href="#cam-11">
+   CAM-11
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">
-   Quickly add YAML metadata for MyST Notebooks
+  <a class="reference internal nav-link" href="#nam-11">
+   NAM-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eur-11">
+   EUR-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#afr-11">
+   AFR-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-11">
+   WAS-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eas-11">
+   EAS-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cas-11">
+   CAS-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aus-11">
+   AUS-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ant-11">
+   ANT-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arc-11">
+   ARC-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#med-11">
+   MED-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mna-11">
+   MNA-11
   </a>
  </li>
 </ul>
@@ -375,18 +385,68 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example-cell">
-   An example cell
+  <a class="reference internal nav-link" href="#sam-11">
+   SAM-11
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">
-   Create a notebook with MyST Markdown
+  <a class="reference internal nav-link" href="#cam-11">
+   CAM-11
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">
-   Quickly add YAML metadata for MyST Notebooks
+  <a class="reference internal nav-link" href="#nam-11">
+   NAM-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eur-11">
+   EUR-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#afr-11">
+   AFR-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-11">
+   WAS-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eas-11">
+   EAS-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cas-11">
+   CAS-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aus-11">
+   AUS-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ant-11">
+   ANT-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arc-11">
+   ARC-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#med-11">
+   MED-11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mna-11">
+   MNA-11
   </a>
  </li>
 </ul>
@@ -401,148 +461,57 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="domains">
 <h1>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">#</a></h1>
-<p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.</p>
-<section id="an-example-cell">
-<h2>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this headline">#</a></h2>
-<p>With MyST Markdown, you can define code cells with a directive like so:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/WCRP-CORDEX/domain-tables/main/boundaries.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;domain_id&quot;</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>region</th>
-      <th>domain</th>
-      <th>tlc_lon</th>
-      <th>tlc_lat</th>
-      <th>cnb_lon</th>
-      <th>cnb_lat</th>
-      <th>trc_lon</th>
-      <th>trc_lat</th>
-      <th>cwb_lon</th>
-      <th>cwb_lat</th>
-      <th>cpd_lon</th>
-      <th>cpd_lat</th>
-      <th>ceb_lon</th>
-      <th>ceb_lat</th>
-      <th>blc_lon</th>
-      <th>blc_lat</th>
-      <th>csb_lon</th>
-      <th>csb_lat</th>
-      <th>brc_lon</th>
-      <th>brc_lat</th>
-    </tr>
-    <tr>
-      <th>domain_id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>EUR</th>
-      <td>1</td>
-      <td>Europe</td>
-      <td>315.86</td>
-      <td>60.21</td>
-      <td>1.92</td>
-      <td>71.84</td>
-      <td>64.4</td>
-      <td>66.65</td>
-      <td>338.23</td>
-      <td>42.36</td>
-      <td>9.75</td>
-      <td>49.68</td>
-      <td>44.77</td>
-      <td>46.72</td>
-      <td>350.01</td>
-      <td>22.2</td>
-      <td>12.48</td>
-      <td>27.34</td>
-      <td>36.3</td>
-      <td>25.36</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
-</div>
+<section id="sam-11">
+<h2>SAM-11<a class="headerlink" href="#sam-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/SAM-11.png" /></p>
 </section>
-<section id="create-a-notebook-with-myst-markdown">
-<h2>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this headline">#</a></h2>
-<p>MyST Markdown notebooks are defined by two things:</p>
-<ol class="simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
-</ol>
-<p>That’s all that is needed to get started!</p>
+<section id="cam-11">
+<h2>CAM-11<a class="headerlink" href="#cam-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/CAM-11.png" /></p>
 </section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this headline">#</a></h2>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
-</pre></div>
-</div>
+<section id="nam-11">
+<h2>NAM-11<a class="headerlink" href="#nam-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/NAM-11.png" /></p>
+</section>
+<section id="eur-11">
+<h2>EUR-11<a class="headerlink" href="#eur-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/EUR-11.png" /></p>
+</section>
+<section id="afr-11">
+<h2>AFR-11<a class="headerlink" href="#afr-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/AFR-11.png" /></p>
+</section>
+<section id="was-11">
+<h2>WAS-11<a class="headerlink" href="#was-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/WAS-11.png" /></p>
+</section>
+<section id="eas-11">
+<h2>EAS-11<a class="headerlink" href="#eas-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/EAS-11.png" /></p>
+</section>
+<section id="cas-11">
+<h2>CAS-11<a class="headerlink" href="#cas-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/CAS-11.png" /></p>
+</section>
+<section id="aus-11">
+<h2>AUS-11<a class="headerlink" href="#aus-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/AUS-11.png" /></p>
+</section>
+<section id="ant-11">
+<h2>ANT-11<a class="headerlink" href="#ant-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/ANT-11.png" /></p>
+</section>
+<section id="arc-11">
+<h2>ARC-11<a class="headerlink" href="#arc-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/ARC-11.png" /></p>
+</section>
+<section id="med-11">
+<h2>MED-11<a class="headerlink" href="#med-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/MED-11.png" /></p>
+</section>
+<section id="mna-11">
+<h2>MNA-11<a class="headerlink" href="#mna-11" title="Permalink to this headline">#</a></h2>
+<p><img alt="domain_id" src="_images/MNA-11.png" /></p>
 </section>
 </section>
 
@@ -573,6 +542,13 @@ See the YAML at the top of this page for example.</p></li>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="attributes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Global attributes</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>

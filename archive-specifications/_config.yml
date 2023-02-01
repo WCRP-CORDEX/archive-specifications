@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : CORDEX archive specifications  # The title of the book. Will be placed in the left navbar.
-author                      : Lars Buntemeyer  # The author of the book
+author                      : CORDEX  # The author of the book
 copyright                   : "2023"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
 

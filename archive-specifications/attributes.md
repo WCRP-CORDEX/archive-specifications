@@ -4,16 +4,16 @@
 
 * `Conventions` () - Climate and Forecast (CF) convention version (always 1.10 ???)
 * `activity_id` (CV) - activity  identifier ( RCM, ESD and FPS ??? )
-* `contact` (free text) - contact information of the institution that is responsible for CORDEX simulations (avoid personal contact information) 
+* `contact` (free text) - contact information of the institution that is responsible for CORDEX simulations (avoid personal contact information)
 * `creation_date` (build rules) - date when file was created in format  YYYY-MM-DDTHH:MM:SSZ  (e.g., “2023-01-15T14:30:23Z”)
 * `domain` (CV) - name of the CORDEX region (link)
 * `domain_id` (CV) - an identifier assigned to each CORDEX region including a flag for resolution (link)
 * `driving_experiment` (CV) - short description of the CMIP6 experiments (link)
 * `driving_experiment_id` (CV) - root identifier of the CMIP6 experiments (link)
-* `driving_institution_id` (CV) - an identifier of the institution that is responsible for the driving CMIP6 simulation (link) 
+* `driving_institution_id` (CV) - an identifier of the institution that is responsible for the driving CMIP6 simulation (link)
 * `driving_source_id` (CV) - CMIP6 model identifier
-* `driving_variant_label` - “variant” label of the driving CMIP6 simulation (e.g. “r1i1p1f1” etc.) 
-* `frequency` (CV) -  sampling frequency (day, mon, 6hr, 3hr, 1hr) 
+* `driving_variant_label` - “variant” label of the driving CMIP6 simulation (e.g. “r1i1p1f1” etc.)
+* `frequency` (CV) -  sampling frequency (day, mon, 6hr, 3hr, 1hr)
 * `institution` (CV) - full name of institution that is responsible for CORDEX simulations
 * `institution_id` (CV) - an identifier of institution that is responsible for CORDEX simulations
 * `mip_era` (CV) - determine what cycle of CMIP defines experiment and data specifications (always ‘CMIP6’)
@@ -37,19 +37,19 @@
 
 ## DRS elements
 
-The DRS element values must consist of the characters a-z, A-Z, 0-9 and '-' (dash). No other character is allowed. The terms in brackets following the DRS element names in the list below indicate whether the values are prescribed ('single value’), have to be taken from a fixed list of values ('CV'), have to be registered within CORDEX ('CV to register'), or can be chosen freely (‘free string’). Note that most elements must have the same value as a mandatory NetCDF global attribute. 
+The DRS element values must consist of the characters a-z, A-Z, 0-9 and '-' (dash). No other character is allowed. The terms in brackets following the DRS element names in the list below indicate whether the values are prescribed ('single value’), have to be taken from a fixed list of values ('CV'), have to be registered within CORDEX ('CV to register'), or can be chosen freely (‘free string’). Note that most elements must have the same value as a mandatory NetCDF global attribute.
 
 * `variable_id`: (CV) is the short name of the variable. The name is taken from the [CORDEX-CMIP6 Variable List](https://cordex.org/experiment-guidelines/cordex-cmip6/data-request) or CMOR tables (… link …).
 
-* `domain_id`: (CV) is the name assigned to each of the CORDEX regions and includes a flag for resolution as listed in (… link …). 
+* `domain_id`: (CV) is the name assigned to each of the CORDEX regions and includes a flag for resolution as listed in (… link …).
 
-* `driving_source_id`: (CV) is an identifier of the driving data. The name consists of a model identifier. For reanalysis driven runs this is the name of the reanalysis data (ERA5). For runs driven by CMIP6 model data this is the associated CMIP6 source_id, which can be found in the [CMIP6 source id CV](https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html). 
+* `driving_source_id`: (CV) is an identifier of the driving data. The name consists of a model identifier. For reanalysis driven runs this is the name of the reanalysis data (ERA5). For runs driven by CMIP6 model data this is the associated CMIP6 source_id, which can be found in the [CMIP6 source id CV](https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html).
 
-* `driving_experiment_id`: (CV) is either “evaluation” for the ERA5-driven experiment or the value of the CMIP6 experiment_id from the ScenarioMIP activity or “historical” for the historical experiment from CMIP. The values for experiment_id can be found in the [CMIP6 experiment id CV](https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html). 
+* `driving_experiment_id`: (CV) is either “evaluation” for the ERA5-driven experiment or the value of the CMIP6 experiment_id from the ScenarioMIP activity or “historical” for the historical experiment from CMIP. The values for experiment_id can be found in the [CMIP6 experiment id CV](https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html).
 
 * `driving_variant_label`: (CV) identifies the ensemble member of the CMIP6 experiment that produced the forcing data. It has to have the same value as the CMIP6 variant_label. For the evaluation experiment it has to be “r1i1p1f1”.
 
-* `institution_id`: (CV) is an identifier for the institution that is responsible for generating and providing CORDEX simulations. All CORDEX Institutions must be registered to publish their simulations on ESGF. Instructions on how to register an institution and the actual state of the CV is found (… links …). 
+* `institution_id`: (CV) is an identifier for the institution that is responsible for generating and providing CORDEX simulations. All CORDEX Institutions must be registered to publish their simulations on ESGF. Instructions on how to register an institution and the actual state of the CV is found (… links …).
 
 * `source_id`: (CV to register) is an identifier (acronym) of the CORDEX RCM. All CORDEX RCMs have to be registered to publish their simulations on ESGF. Instructions on how to register a RCM and the actual state of the CV is found (… links …).
 
@@ -60,4 +60,3 @@ The DRS element values must consist of the characters a-z, A-Z, 0-9 and '-' (das
 ---
 
 Additional depedent attributes that give more detailed meta info will be derived and can be filled automatically.
-

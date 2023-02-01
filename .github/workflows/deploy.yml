@@ -10,6 +10,9 @@ on:
 jobs:
   build-and-deploy-book:
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -l {0}
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -43,7 +46,6 @@ jobs:
 
     # Build the book
     - name: Build the book
-      shell: bash -l {0}
       run: |
         jupyter-book build archive-specifications
 

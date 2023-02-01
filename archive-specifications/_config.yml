@@ -8,7 +8,7 @@
 title                       : CORDEX archive specifications  # The title of the book. Will be placed in the left navbar.
 author                      : CORDEX  # The author of the book
 copyright                   : "2023"  # Copyright year to be placed in the footer
-logo                        : WCRP-CORDEX-logo.png  # A path to the book logo
+logo                        : figs/WCRP-CORDEX-logo.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

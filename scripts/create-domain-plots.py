@@ -128,7 +128,7 @@ def create_domain_section(template):
 
 
 if __name__ == "__main__":
-    for domain_id in df.index[0:2]:
+    for domain_id in df.index:
         print(domain_id)
         plot_domain(domain_id)
     create_domain_section(template=op.join(bookpath, "domains.tpl"))

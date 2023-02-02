@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : CORDEX archive specifications  # The title of the book. Will be placed in the left navbar.
-author                      : CORDEX  # The author of the book
+author                      : The CORDEX community  # The author of the book
 copyright                   : "2023"  # Copyright year to be placed in the footer
 logo                        : figs/WCRP-CORDEX-logo.png  # A path to the book logo
 
@@ -19,6 +19,8 @@ execute:
 latex:
   latex_documents:
     targetname: book.tex
+  latex_engine: pdflatex
+
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:

@@ -26,6 +26,5 @@ dependencies:
   - requests
   - aiohttp
   - sphinx
-  - pdflatex
   - pip:
     - git+https://github.com/euro-cordex/py-cordex.git # always use master for now

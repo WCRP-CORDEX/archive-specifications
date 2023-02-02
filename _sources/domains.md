@@ -1,54 +1,54 @@
 # Domains
 
-## SAM-11
+## South America
 
-![domain_id](figs/SAM-11.png)
+![SAM-11](figs/SAM-11.png)
 
-## CAM-11
+## Central America
 
-![domain_id](figs/CAM-11.png)
+![CAM-11](figs/CAM-11.png)
 
-## NAM-11
+## North America
 
-![domain_id](figs/NAM-11.png)
+![NAM-11](figs/NAM-11.png)
 
-## EUR-11
+## Europe
 
-![domain_id](figs/EUR-11.png)
+![EUR-11](figs/EUR-11.png)
 
-## AFR-11
+## Africa
 
-![domain_id](figs/AFR-11.png)
+![AFR-11](figs/AFR-11.png)
 
-## WAS-11
+## South Asia
 
-![domain_id](figs/WAS-11.png)
+![WAS-11](figs/WAS-11.png)
 
-## EAS-11
+## East Asia
 
-![domain_id](figs/EAS-11.png)
+![EAS-11](figs/EAS-11.png)
 
-## CAS-11
+## Central Asia
 
-![domain_id](figs/CAS-11.png)
+![CAS-11](figs/CAS-11.png)
 
-## AUS-11
+## Australasia
 
-![domain_id](figs/AUS-11.png)
+![AUS-11](figs/AUS-11.png)
 
-## ANT-11
+## Antarctica
 
-![domain_id](figs/ANT-11.png)
+![ANT-11](figs/ANT-11.png)
 
-## ARC-11
+## Arctic
 
-![domain_id](figs/ARC-11.png)
+![ARC-11](figs/ARC-11.png)
 
-## MED-11
+## Mediterranean
 
-![domain_id](figs/MED-11.png)
+![MED-11](figs/MED-11.png)
 
-## MNA-11
+## Middle East and North Africa
 
-![domain_id](figs/MNA-11.png)
+![MNA-11](figs/MNA-11.png)
 

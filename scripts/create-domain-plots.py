@@ -114,9 +114,11 @@ def plot_domain(domain_id, figsize=None):
 
 def create_subsection(domain_id):
     title = df.loc[domain_id].domain
-    text = "## {t}\n\n"
-    text += "![{d}](figs/{d}.png)\n"
-    return text.format(t=title, d=domain_id)
+    table = df[df.index == domain_id].to_markdown()
+    text = f"## {title}\n\n"
+    text += f"![{title}](figs/{domain_id}.png)\n\n"
+    text += f"{table}\n"
+    return text
 
 
 def create_domain_section(template):
@@ -128,7 +130,7 @@ def create_domain_section(template):
 
 
 if __name__ == "__main__":
-    for domain_id in df.index:
+    for domain_id in df.index[0:1]:
         print(domain_id)
         plot_domain(domain_id)
     create_domain_section(template=op.join(bookpath, "domains.tpl"))

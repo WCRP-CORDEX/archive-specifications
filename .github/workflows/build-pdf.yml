@@ -43,7 +43,8 @@ jobs:
 
     - name: Create domain plots
       run: |
-        python scripts/create-domain-plots.py
+        python scripts/create-domain-plots.py markdown
+
     - name: Install latex dependencies
       run: |
         sudo apt-get -qq update

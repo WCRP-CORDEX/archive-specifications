@@ -42,7 +42,7 @@ jobs:
         
     - name: Create domain plots
       run: |
-        python scripts/create-domain-plots.py
+        python scripts/create-domain-plots.py html
 
     # Build the book
     - name: Build the book

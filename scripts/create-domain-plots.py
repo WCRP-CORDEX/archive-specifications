@@ -135,11 +135,11 @@ def create_subsection(domain_id, fmt):
     return text
 
 
-def create_domain_section(template, fmt):
+def create_domain_section(template, fmt, domain_ids):
     text = "## Overview\n\n"
     table = getattr(df.reset_index(), f"to_{fmt}")(index=False)
     text += f"{table}\n\n"
-    text += "\n".join(create_subsection(d, fmt) for d in df.index)
+    text += "\n".join(create_subsection(d, fmt) for d in domain_ids)
     with open(template, "r") as f:
         tpl = f.read()
     with open(op.join(bookpath, "domains.md"), "w") as f:

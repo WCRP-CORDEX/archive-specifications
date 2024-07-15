@@ -57,11 +57,11 @@ def get_center(domain_id):
     if not np.isnan(data["ur_lon"]):
         ur_lon = data["ur_lon"]
     else:
-        ur_lon = ll_lon + (data["nlon"]-1) * data["dlon"]
+        ur_lon = ll_lon + (data["nlon"] - 1) * data["dlon"]
     if not np.isnan(data["ur_lat"]):
         ur_lat = data["ur_lat"]
     else:
-        ur_lat = ll_lon + (data["nlat"]-1) * data["dlat"]
+        ur_lat = ll_lon + (data["nlat"] - 1) * data["dlat"]
     print(ur_lat)
     return (
         0.5 * (ur_lon + ll_lon),
@@ -89,7 +89,7 @@ def plot_domain(domain_id, figsize=None):
     # entartet
     if abs(cenlat) > 85.0:
         cenlon = 0.0
-    elif abs(cenlat) < 7.:
+    elif abs(cenlat) < 7.0:
         cenlat = 0.0
 
     projection = ccrs.Orthographic(

@@ -135,11 +135,11 @@ def create_subsection(domain_id, fmt):
     return text
 
 
-def create_domain_section(template, fmt):
+def create_domain_section(template, fmt, domain_ids):
     text = "## Overview\n\n"
     table = getattr(df.reset_index(), f"to_{fmt}")(index=False)
     text += f"{table}\n\n"
-    text += "\n".join(create_subsection(d, fmt) for d in df.index)
+    text += "\n".join(create_subsection(d, fmt) for d in domain_ids)
     with open(template, "r") as f:
         tpl = f.read()
     with open(op.join(bookpath, "domains.md"), "w") as f:
@@ -154,8 +154,26 @@ if __name__ == "__main__":
     except Exception:
         fmt = "html"
 
-    for domain_id in df.index:
+    domain_ids = [
+        "SAM-50",
+        "CAM-50",
+        "NAM-50",
+        "EUR-50",
+        "AFR-50",
+        "WAS-50",
+        "EAS-50",
+        "CAS-50",
+        "AUS-50",
+        "ANT-50",
+        "ARC-50",
+        "MED-50",
+        "MNA-50",
+    ]
+
+    for domain_id in domain_ids:
         print(domain_id)
         plot_domain(domain_id)
 
-    create_domain_section(template=op.join(bookpath, "domains.tpl"), fmt=fmt)
+    create_domain_section(
+        template=op.join(bookpath, "domains.tpl"), fmt=fmt, domain_ids=domain_ids
+    )

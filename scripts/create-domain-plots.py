@@ -108,7 +108,7 @@ def plot_domain(domain_id, figsize=None):
     )
 
     plt.savefig(op.join(figpath, f"{domain_id}.png"))
-
+    plt.close()
     return
 
 
@@ -134,6 +134,7 @@ def create_domain_section(template, fmt):
 
 if __name__ == "__main__":
     import sys
+
     try:
         fmt = sys.argv[1]
     except Exception:

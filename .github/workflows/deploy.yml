@@ -39,7 +39,7 @@ jobs:
       run: |
         conda info -a
         conda list
-        
+
     - name: Create domain plots
       run: |
         python scripts/create-domain-plots.py html

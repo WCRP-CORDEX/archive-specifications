@@ -5,6 +5,7 @@
 CORDEX archive specifications
 
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://wcrp-cordex.github.io/archive-specifications)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/WCRP-CORDEX/archive-specifications/main.svg)](https://results.pre-commit.ci/latest/github/WCRP-CORDEX/archive-specifications/main)
 
 ## Credits
 

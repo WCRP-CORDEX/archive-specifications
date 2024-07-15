@@ -3,6 +3,7 @@ from os import path as op
 import cartopy.crs as ccrs
 import geopandas as gpd
 import pandas as pd
+import numpy as np
 from pyproj import CRS
 from shapely.geometry import Polygon
 
@@ -51,9 +52,20 @@ def get_geodataframe(domain_id):
 
 def get_center(domain_id):
     data = df.loc[domain_id].to_dict()
+    ll_lon = data["ll_lon"]
+    ll_lat = data["ll_lat"]
+    if not np.isnan(data["ur_lon"]):
+        ur_lon = data["ur_lon"]
+    else:
+        ur_lon = ll_lon + (data["nlon"] - 1) * data["dlon"]
+    if not np.isnan(data["ur_lat"]):
+        ur_lat = data["ur_lat"]
+    else:
+        ur_lat = ll_lon + (data["nlat"] - 1) * data["dlat"]
+    print(ur_lat)
     return (
-        0.5 * (data["ur_lon"] + data["ll_lon"]),
-        0.5 * (data["ur_lat"] + data["ll_lat"]),
+        0.5 * (ur_lon + ll_lon),
+        0.5 * (ur_lat + ll_lat),
     )
 
 
@@ -77,6 +89,8 @@ def plot_domain(domain_id, figsize=None):
     # entartet
     if abs(cenlat) > 85.0:
         cenlon = 0.0
+    elif abs(cenlat) < 7.0:
+        cenlat = 0.0
 
     projection = ccrs.Orthographic(
         central_longitude=cenlon, central_latitude=cenlat, globe=None
@@ -108,7 +122,7 @@ def plot_domain(domain_id, figsize=None):
     )
 
     plt.savefig(op.join(figpath, f"{domain_id}.png"))
-
+    plt.close()
     return
 
 
@@ -134,6 +148,7 @@ def create_domain_section(template, fmt):
 
 if __name__ == "__main__":
     import sys
+
     try:
         fmt = sys.argv[1]
     except Exception:

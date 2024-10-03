@@ -1,12 +1,11 @@
-# CORDEX archive specifications
+# CORDEX-CMIP6 Archiving Specifications
 
-:warning: This repo is outdated and does not contain the latest version of the current CORDEX archiving specs. Please use the [official publication](https://zenodo.org/records/10961069) instead!
+This repository collects [issues](https://github.com/WCRP-CORDEX/archive-specifications/issues) related to the [CORDEX-CMIP6 Archiving Specifications for Dynamical Downscaling](https://doi.org/10.5281/zenodo.10961068), which are maintained in Zenodo.
 
-CORDEX archive specifications
+Different versions of the specifications have been released. Please, always refer to the [latest version](https://doi.org/10.5281/zenodo.10961068) when processing your data.
 
-[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://wcrp-cordex.github.io/archive-specifications)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/WCRP-CORDEX/archive-specifications/main.svg)](https://results.pre-commit.ci/latest/github/WCRP-CORDEX/archive-specifications/main)
+| version | date | comment |
+|---------|------|---------|
+| [v1](https://doi.org/10.5281/zenodo.10961069) | 2024-04-10 | Initial release on April, 10th, 2024. |
 
-## Credits
 
-This project is created using the excellent open source [Jupyter Book project](https://jupyterbook.org/) and the [executablebooks/cookiecutter-jupyter-book template](https://github.com/executablebooks/cookiecutter-jupyter-book).

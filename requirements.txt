@@ -1,0 +1,3 @@
+mkdocs-material>=9.4
+mkdocs-exporter>=0.3
+pymdown-extensions>=10.3

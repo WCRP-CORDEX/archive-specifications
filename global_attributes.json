@@ -1,0 +1,234 @@
+{
+  "activity_id": {
+    "name": "activity_id",
+    "description": "an identifier of different CORDEX activities as dynamical downscaling (DD) or empirical- statistical downscaling (ESD). **Used in faceted searches, part of DRS.**",
+    "examples": "\"DD\" is the only option,  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_activity_id.json))",
+    "cordex_cmip5_attribute": "-",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "comment": {
+    "name": "comment",
+    "description": "additional information about the data or methods used to produce the simulation",
+    "examples": "-",
+    "cordex_cmip5_attribute": "comment",
+    "form": "free form",
+    "when_required": "never"
+  },
+  "contact": {
+    "name": "contact",
+    "description": "contact information of the institution that is responsible for CORDEX simulations (avoid personal contact information)",
+    "examples": "-",
+    "cordex_cmip5_attribute": "contact",
+    "form": "free form",
+    "when_required": "always"
+  },
+  "Conventions": {
+    "name": "Conventions",
+    "description": "Climate and Forecast (CF) metadata conventions version",
+    "examples": "\"CF-1.11\" is the only option.",
+    "cordex_cmip5_attribute": "Conventions",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "creation_date": {
+    "name": "creation_date",
+    "description": "date when the file was created in format  YYYY-MM-DDTHH:MM:SSZ",
+    "examples": "\"2023-01-15T14:30:23Z\"",
+    "cordex_cmip5_attribute": "creation_date",
+    "form": "structured form",
+    "when_required": "always"
+  },
+  "domain": {
+    "name": "domain",
+    "description": "name of the CORDEX region",
+    "examples": "\"Africa\", \"South-East Asia\"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json))",
+    "cordex_cmip5_attribute": "-",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "domain_id": {
+    "name": "domain_id",
+    "description": "an identifier assigned to each CORDEX region including a flag for resolution.  **Used in faceted searches, part of DRS.**",
+    "examples": "\"AFR-25\", \"SEA-25\"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json))",
+    "cordex_cmip5_attribute": "CORDEX_domain",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "driving_experiment": {
+    "name": "driving_experiment",
+    "description": "short description of the  reanalysis-driven experiment or the driving CMIP6 experiment",
+    "examples": "\"evaluation run with reanalysis forcing\", \"all-forcing simulation of the recent past\", \"gap-filling scenario reaching 7.0 based on SSP3\"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json))",
+    "cordex_cmip5_attribute": "experiment",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "driving_experiment_id": {
+    "name": "driving_experiment_id",
+    "description": "an identifier of the  reanalysis-driven experiment or the driving CMIP6 experiment.  **Used in faceted searches, part of DRS.**",
+    "examples": "\"evaluation\", \"historical\", \"ssp370\"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json))",
+    "cordex_cmip5_attribute": "experiment_id",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "driving_institution_id": {
+    "name": "driving_institution_id",
+    "description": "an identifier of the institution that is responsible for the driving reanalysis or CMIP6 simulation",
+    "examples": "\"ECMWF\"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_institution_id.json))",
+    "cordex_cmip5_attribute": "part of driving_model_id",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "driving_source_id": {
+    "name": "driving_source_id",
+    "description": "reanalysis or CMIP6 model identifier  **Used in faceted searches, part of DRS**.",
+    "examples": "\"ERA5\"  ([reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_source_id.json))",
+    "cordex_cmip5_attribute": "part of driving_model_id",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "driving_variant_label": {
+    "name": "driving_variant_label",
+    "description": "variant_label of the CMIP6 simulation or driving reanalysis.  **Used in faceted searches, part of DRS**.",
+    "examples": "\"r1i1p1f1\", \"r2i1p1f1\"",
+    "cordex_cmip5_attribute": "driving_model_ensemble_member (ensemble_member in CMIP5)",
+    "form": "",
+    "when_required": "always"
+  },
+  "frequency": {
+    "name": "frequency",
+    "description": "sampling frequency **Used in faceted searches, part of DRS.**",
+    "examples": "day, mon, 6hr, 3hr, 1hr, fx  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_frequency.json))",
+    "cordex_cmip5_attribute": "frequency",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "grid": {
+    "name": "grid",
+    "description": "provides information about the horizontal grid and regridding procedure",
+    "examples": "see note 1",
+    "cordex_cmip5_attribute": "-",
+    "form": "free form",
+    "when_required": "always"
+  },
+  "history": {
+    "name": "history",
+    "description": "a timestamped trail for modifications to the original data, as suggested by the CF conventions",
+    "examples": "-",
+    "cordex_cmip5_attribute": "history",
+    "form": "free form",
+    "when_required": "never"
+  },
+  "institution": {
+    "name": "institution",
+    "description": "full name of the institution that is responsible for CORDEX simulations",
+    "examples": "(see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json))",
+    "cordex_cmip5_attribute": "institution",
+    "form": "CV to register",
+    "when_required": "always"
+  },
+  "institution_id": {
+    "name": "institution_id",
+    "description": "an identifier of the institution that is responsible for CORDEX simulations **Used in faceted searches, part of DRS.**",
+    "examples": "(see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json))",
+    "cordex_cmip5_attribute": "institute_id",
+    "form": "CV to register",
+    "when_required": "always"
+  },
+  "license": {
+    "name": "license",
+    "description": "provides information about the license",
+    "examples": "\"[https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use](https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use)\" is the only option",
+    "cordex_cmip5_attribute": "-",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "mip_era": {
+    "name": "mip_era",
+    "description": "determines what cycle of CMIP defines experiment and data specifications",
+    "examples": "\"CMIP6\" is the only option.",
+    "cordex_cmip5_attribute": "-",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "product": {
+    "name": "product",
+    "description": "product type **Used in faceted searches.**",
+    "examples": "\"model-output\" is the only option",
+    "cordex_cmip5_attribute": "product",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "project_id": {
+    "name": "project_id",
+    "description": "project identifier  **Used in faceted searches, part of DRS**.",
+    "examples": "\"CORDEX-CMIP6\" is the only option.",
+    "cordex_cmip5_attribute": "project_id",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "references": {
+    "name": "references",
+    "description": "published or web-based references that describe the data, model or methods used",
+    "examples": "-",
+    "cordex_cmip5_attribute": "references",
+    "form": "free form",
+    "when_required": "never"
+  },
+  "source": {
+    "name": "source",
+    "description": "full model name/version",
+    "examples": "see \"label_extended\" in [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json)",
+    "cordex_cmip5_attribute": "-",
+    "form": "CV to register",
+    "when_required": "always"
+  },
+  "source_id": {
+    "name": "source_id",
+    "description": "model identifier (acronym) **Used in faceted searches, part of DRS**.",
+    "examples": "see \"source_id\" in [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json)",
+    "cordex_cmip5_attribute": "part of model_id",
+    "form": "CV to register",
+    "when_required": "always"
+  },
+  "source_type": {
+    "name": "source_type",
+    "description": "model configuration **Used in faceted searches**",
+    "examples": "\"ARCM\", \"AORCM\", \"AGCM\", \"AOGCM\" (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_type.json))",
+    "cordex_cmip5_attribute": "-",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "tracking_id": {
+    "name": "tracking_id",
+    "description": "unique file identifier",
+    "examples": "see note 3",
+    "cordex_cmip5_attribute": "tracking_id",
+    "form": "structured form",
+    "when_required": "always"
+  },
+  "variable_id": {
+    "name": "variable_id",
+    "description": "variable identifier **Used in faceted searches, part of DRS.**",
+    "examples": "\"tas\", \"pr\" (see [CORDEX-CMIP6 CMOR Tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables))",
+    "cordex_cmip5_attribute": "-",
+    "form": "CV",
+    "when_required": "always"
+  },
+  "version_realization": {
+    "name": "version_realization",
+    "description": "identifies versions of CORDEX datasets and RCM realizations  **Used in faceted searches, part of DRS**.",
+    "examples": "\"v1-r1\", \"v2-r1\", \"v1-r2\"",
+    "cordex_cmip5_attribute": "rcm_version_id",
+    "form": "structured form",
+    "when_required": "always"
+  },
+  "version_realization_info": {
+    "name": "version_realization_info",
+    "description": "description of version_realization if it is not \"v1-r1\"",
+    "examples": "see note 2",
+    "cordex_cmip5_attribute": "-",
+    "form": "free form",
+    "when_required": "never but recommended"
+  }
+}

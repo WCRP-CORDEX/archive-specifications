@@ -1,0 +1,31 @@
+| CORDEX-CMIP6 global attribute | description | examples | corresponding attribute in CORDEX-CMIP5 | form | when required? |
+| ----- | ----- | ----- | :---: | :---: | :---: |
+| activity_id | an identifier of different CORDEX activities as dynamical downscaling (DD) or empirical- statistical downscaling (ESD). **Used in faceted searches, part of DRS.** | "DD" is the only option,  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_activity_id.json)) | - | CV | always |
+| comment | additional information about the data or methods used to produce the simulation | - | comment | free form | never |
+| contact | contact information of the institution that is responsible for CORDEX simulations (avoid personal contact information) | - | contact | free form | always |
+| Conventions | Climate and Forecast (CF) metadata conventions version | "CF-1.11" is the only option. | Conventions | CV | always |
+| creation_date | date when the file was created in format  YYYY-MM-DDTHH:MM:SSZ | "2023-01-15T14:30:23Z" | creation_date | structured form | always |
+| domain | name of the CORDEX region | "Africa", "South-East Asia"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json)) | - | CV | always |
+| domain_id | an identifier assigned to each CORDEX region including a flag for resolution.  **Used in faceted searches, part of DRS.** | "AFR-25", "SEA-25"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json)) | CORDEX_domain | CV | always |
+| driving_experiment | short description of the  reanalysis-driven experiment or the driving CMIP6 experiment | "evaluation run with reanalysis forcing", "all-forcing simulation of the recent past", "gap-filling scenario reaching 7.0 based on SSP3"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json)) | experiment | CV | always |
+| driving_experiment_id | an identifier of the  reanalysis-driven experiment or the driving CMIP6 experiment.  **Used in faceted searches, part of DRS.** | "evaluation", "historical", "ssp370"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json)) | experiment_id | CV | always |
+| driving_institution_id | an identifier of the institution that is responsible for the driving reanalysis or CMIP6 simulation | "ECMWF"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_institution_id.json)) | part of driving_model_id | CV | always |
+| driving_source_id | reanalysis or CMIP6 model identifier  **Used in faceted searches, part of DRS**. | "ERA5"  ([reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_source_id.json)) | part of driving_model_id | CV | always |
+| driving_variant_label | variant_label of the CMIP6 simulation or driving reanalysis.  **Used in faceted searches, part of DRS**. | "r1i1p1f1", "r2i1p1f1" | driving_model_ensemble_member (ensemble_member in CMIP5) |  | always |
+| frequency | sampling frequency **Used in faceted searches, part of DRS.** | day, mon, 6hr, 3hr, 1hr, fx  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_frequency.json)) | frequency | CV | always |
+| grid | provides information about the horizontal grid and regridding procedure | see note 1 | - | free form | always |
+| history | a timestamped trail for modifications to the original data, as suggested by the CF conventions | - | history | free form | never |
+| institution | full name of the institution that is responsible for CORDEX simulations | (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json)) | institution | CV to register | always |
+| institution_id | an identifier of the institution that is responsible for CORDEX simulations **Used in faceted searches, part of DRS.** | (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json)) | institute_id | CV to register | always |
+| license | provides information about the license | "[https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use](https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use)" is the only option | - | CV | always |
+| mip_era | determines what cycle of CMIP defines experiment and data specifications | "CMIP6" is the only option. | - | CV | always |
+| product | product type **Used in faceted searches.** | "model-output" is the only option | product | CV | always |
+| project_id | project identifier  **Used in faceted searches, part of DRS**. | "CORDEX-CMIP6" is the only option. | project_id | CV | always |
+| references | published or web-based references that describe the data, model or methods used | - | references | free form | never |
+| source | full model name/version | see "label_extended" in [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json) | - | CV to register | always |
+| source_id | model identifier (acronym) **Used in faceted searches, part of DRS**. | see "source_id" in [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json) | part of model_id | CV to register | always |
+| source_type | model configuration **Used in faceted searches** | "ARCM", "AORCM", "AGCM", "AOGCM" (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_type.json)) | - | CV | always |
+| tracking_id | unique file identifier | see note 3 | tracking_id | structured form | always |
+| variable_id | variable identifier **Used in faceted searches, part of DRS.** | "tas", "pr" (see [CORDEX-CMIP6 CMOR Tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables)) | - | CV | always |
+| version_realization | identifies versions of CORDEX datasets and RCM realizations  **Used in faceted searches, part of DRS**. | "v1-r1", "v2-r1", "v1-r2" | rcm_version_id | structured form | always |
+| version_realization_info | description of version_realization if it is not "v1-r1" | see note 2 | - | free form | never but recommended |

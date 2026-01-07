@@ -1,0 +1,23 @@
+/* Global PDF page settings via Paged Media CSS */
+@page {
+  size: A4 landscape;
+  margin: 1.20cm;
+}
+
+/* Optional named pages for per-section orientation control */
+@page portrait {
+  size: A4 portrait;
+}
+@page landscape {
+  size: A4 landscape;
+}
+
+/* Apply named page boxes by assigning classes to block elements */
+.portrait-page {
+  page: portrait;
+  break-before: page;
+}
+.landscape-page {
+  page: landscape;
+  break-before: page;
+}

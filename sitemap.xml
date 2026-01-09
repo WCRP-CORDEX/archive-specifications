@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://wcrp-cordex.github.io/archive-specifications/</loc>
+         <lastmod>2026-01-09</lastmod>
+    </url>
+    <url>
+         <loc>https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD/</loc>
+         <lastmod>2026-01-09</lastmod>
+    </url>
+    <url>
+         <loc>https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_index/</loc>
+         <lastmod>2026-01-09</lastmod>
+    </url>
+    <url>
+         <loc>https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP7_archiving_specifications_DD/</loc>
+         <lastmod>2026-01-09</lastmod>
+    </url>
+    <url>
+         <loc>https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP7_index/</loc>
+         <lastmod>2026-01-09</lastmod>
+    </url>
+    <url>
+         <loc>https://wcrp-cordex.github.io/archive-specifications/global_attributes/</loc>
+         <lastmod>2026-01-09</lastmod>
+    </url>
+</urlset>

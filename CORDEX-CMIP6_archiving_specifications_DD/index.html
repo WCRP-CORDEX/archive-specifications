@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD/" rel="canonical"/>
+<link href="../CORDEX-CMIP6_index/" rel="prev"/>
+<link href="../CORDEX-CMIP7_index/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>Dynamical Downscaling - CORDEX Archiving Specifications</title>
+<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../assets/stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="amber" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#cordex-cmip6-archiving-specifications-for-dynamical-downscaling">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="CORDEX Archiving Specifications" class="md-header__button md-logo" data-md-component="logo" href=".." title="CORDEX Archiving Specifications">
+<img alt="logo" src="../assets/images/CORDEX_RGB_logo_negative.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            CORDEX Archiving Specifications
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Dynamical Downscaling
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="amber" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/WCRP-CORDEX/archive-specifications" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    WCRP-CORDEX/archive-specifications
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../CORDEX-CMIP6_index/">
+          
+  
+  
+    
+  
+  CORDEX-CMIP6
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../CORDEX-CMIP7_index/">
+          
+  
+  
+    
+  
+  CORDEX-CMIP7
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="CORDEX Archiving Specifications" class="md-nav__button md-logo" data-md-component="logo" href=".." title="CORDEX Archiving Specifications">
+<img alt="logo" src="../assets/images/CORDEX_RGB_logo_negative.png"/>
+</a>
+    CORDEX Archiving Specifications
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/WCRP-CORDEX/archive-specifications" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    WCRP-CORDEX/archive-specifications
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    CORDEX-CMIP6
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    CORDEX-CMIP6
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../CORDEX-CMIP6_index/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Dynamical Downscaling
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Dynamical Downscaling
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-drs-elements">
+<span class="md-ellipsis">
+      
+        1. DRS elements
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-global-attributes">
+<span class="md-ellipsis">
+      
+        2. Global attributes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-file-naming">
+<span class="md-ellipsis">
+      
+        3. File naming
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-esgf-directory-structure">
+<span class="md-ellipsis">
+      
+        4. ESGF directory structure
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-file-format">
+<span class="md-ellipsis">
+      
+        5. File format
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-cordex-domains-and-horizontal-coordinates">
+<span class="md-ellipsis">
+      
+        6. CORDEX domains and horizontal coordinates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-time-coordinate">
+<span class="md-ellipsis">
+      
+        7. Time coordinate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-time-period-for-each-data-file">
+<span class="md-ellipsis">
+      
+        8. Time period for each data file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-license">
+<span class="md-ellipsis">
+      
+        9. License
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-registration">
+<span class="md-ellipsis">
+      
+        10. Registration
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-esgf-search-facets-mapping">
+<span class="md-ellipsis">
+      
+        11. ESGF Search Facets Mapping
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-user-support">
+<span class="md-ellipsis">
+      
+        12. User support
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acknowledgments">
+<span class="md-ellipsis">
+      
+        Acknowledgments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-examples">
+<span class="md-ellipsis">
+      
+        13. Examples
+      
+    </span>
+</a>
+<nav aria-label="13. Examples" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#131-rotated-pole-coordinate-system">
+<span class="md-ellipsis">
+      
+        13.1 Rotated Pole Coordinate System
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#132-lambert-conformal-conic-projection">
+<span class="md-ellipsis">
+      
+        13.2 Lambert Conformal Conic projection
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#133-vertical-coordinate-depth">
+<span class="md-ellipsis">
+      
+        13.3 Vertical coordinate depth
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#134-time-coordinate">
+<span class="md-ellipsis">
+      
+        13.4 Time coordinate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#135-scalar-coordinate-variables">
+<span class="md-ellipsis">
+      
+        13.5 Scalar coordinate variables
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#136-global-attributes">
+<span class="md-ellipsis">
+      
+        13.6 Global attributes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-version-history">
+<span class="md-ellipsis">
+      
+        14. Version history
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    CORDEX-CMIP7
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    CORDEX-CMIP7
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../CORDEX-CMIP7_index/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../CORDEX-CMIP7_archiving_specifications_DD/">
+<span class="md-ellipsis">
+    
+  
+    Dynamical Downscaling
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-drs-elements">
+<span class="md-ellipsis">
+      
+        1. DRS elements
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-global-attributes">
+<span class="md-ellipsis">
+      
+        2. Global attributes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-file-naming">
+<span class="md-ellipsis">
+      
+        3. File naming
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-esgf-directory-structure">
+<span class="md-ellipsis">
+      
+        4. ESGF directory structure
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-file-format">
+<span class="md-ellipsis">
+      
+        5. File format
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-cordex-domains-and-horizontal-coordinates">
+<span class="md-ellipsis">
+      
+        6. CORDEX domains and horizontal coordinates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-time-coordinate">
+<span class="md-ellipsis">
+      
+        7. Time coordinate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-time-period-for-each-data-file">
+<span class="md-ellipsis">
+      
+        8. Time period for each data file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-license">
+<span class="md-ellipsis">
+      
+        9. License
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-registration">
+<span class="md-ellipsis">
+      
+        10. Registration
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-esgf-search-facets-mapping">
+<span class="md-ellipsis">
+      
+        11. ESGF Search Facets Mapping
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-user-support">
+<span class="md-ellipsis">
+      
+        12. User support
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acknowledgments">
+<span class="md-ellipsis">
+      
+        Acknowledgments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-examples">
+<span class="md-ellipsis">
+      
+        13. Examples
+      
+    </span>
+</a>
+<nav aria-label="13. Examples" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#131-rotated-pole-coordinate-system">
+<span class="md-ellipsis">
+      
+        13.1 Rotated Pole Coordinate System
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#132-lambert-conformal-conic-projection">
+<span class="md-ellipsis">
+      
+        13.2 Lambert Conformal Conic projection
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#133-vertical-coordinate-depth">
+<span class="md-ellipsis">
+      
+        13.3 Vertical coordinate depth
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#134-time-coordinate">
+<span class="md-ellipsis">
+      
+        13.4 Time coordinate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#135-scalar-coordinate-variables">
+<span class="md-ellipsis">
+      
+        13.5 Scalar coordinate variables
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#136-global-attributes">
+<span class="md-ellipsis">
+      
+        13.6 Global attributes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-version-history">
+<span class="md-ellipsis">
+      
+        14. Version history
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download="Dynamical Downscaling.pdf" href="index.pdf" title="Download as PDF"><html><body><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 18V9h-5V4H6v16zm-6-1-4-4h2.5v-3h3v3H16z"></path></svg></body></html></a>
+<h1 id="cordex-cmip6-archiving-specifications-for-dynamical-downscaling">CORDEX-CMIP6 Archiving Specifications for Dynamical Downscaling<a class="headerlink" href="#cordex-cmip6-archiving-specifications-for-dynamical-downscaling" title="Permanent link">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Under Development</p>
+<p>This is a test markdown implementation of the CORDEX-CMIP6 archiving specifications. Until fully tested, please, refer to the official document in Zenodo (<a href="https://doi.org/10.5281/zenodo.15047096">https://doi.org/10.5281/zenodo.15047096</a>).</p>
+</div>
+<p>21st March 2025</p>
+<p>DOI: <a href="https://doi.org/10.5281/zenodo.15047096">10.5281/zenodo.15047096</a></p>
+<p>Grigory Nikulin<sup>1</sup>, Lars Buntemeyer<sup>2</sup>, Jesús Fernández<sup>3</sup>, Seth McGinnis<sup>4</sup> and Jason P. Evans<sup>5</sup></p>
+<ol>
+<li>Swedish Meteorological and Hydrological Institute (SMHI), Sweden</li>
+<li>Climate Service Center Germany (GERICS), Germany</li>
+<li>Instituto de Física de Cantabria (IFCA), CSIC-Universidad de Cantabria, Spain</li>
+<li>National Center for Atmospheric Research (NCAR), USA</li>
+<li>Climate Change Research Centre, University of New South Wales (UNSW), Australia</li>
+</ol>
+<p>This document provides Data Reference Syntax (DRS) elements necessary for post-processing CORDEX-CMIP6 simulations and publishing them on the Earth System Grid Federation (ESGF).
+The document includes file and directory naming conventions, global attributes and ESGF Search Facets Mapping.
+Known issues are collected at <a href="https://github.com/WCRP-CORDEX/archive-specifications/issues">https://github.com/WCRP-CORDEX/archive-specifications/issues</a>.
+Newer versions of this document may exist.
+Find the latest version under <a href="https://doi.org/10.5281/zenodo.10961068">https://doi.org/10.5281/zenodo.10961068</a>. </p>
+<h2 id="1-drs-elements">1. DRS elements<a class="headerlink" href="#1-drs-elements" title="Permanent link">¶</a></h2>
+<p>The DRS element values must consist of the characters a-z, A-Z, 0-9 and '-' (dash).
+No other character is allowed.
+The terms in brackets following the DRS element names in the list below indicate whether the values must be taken from a controlled vocabulary ('CV'), i.e. a fixed list of values, must be registered with CORDEX ('CV to register'), or must follow a predefined structure  ('structured form').
+Note that most elements must have the same value as the mandatory NetCDF global attribute. </p>
+<p><code>variable_id</code> (CV) is the short name of the variable.
+The name is taken from the <a href="https://cordex.org/experiment-guidelines/cordex-cmip6/data-request">CORDEX-CMIP6 Variable List</a> or <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables">CORDEX-CMIP6 CMOR tables</a>.</p>
+<p><code>domain_id</code> (CV) is the name assigned to each of the CORDEX regions and includes a flag for resolution as listed in the <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json">CORDEX-CMIP6 domain id CV</a>.   </p>
+<p><code>driving_source_id</code> (CV) is an identifier of the driving data.
+The name consists of a model identifier.
+For reanalysis driven runs this is the name of the reanalysis data (ERA5).
+For runs driven by CMIP6 model data this is the associated CMIP6 source_id, which can be found in the <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_source_id.json">CORDEX-CMIP6 driving source id CV</a>.</p>
+<p><code>driving_experiment_id</code> (CV) is either "evaluation" for the ERA5-driven experiment, the value of the CMIP6 experiment_id from the ScenarioMIP activity, or "historical" for the historical experiment from CMIP.
+The values for driving_experiment_id can be found in the <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json">CORDEX-CMIP6 driving experiment id CV</a>.</p>
+<p><code>driving_variant_label</code> (CV) identifies the ensemble member of the CMIP6 simulation that produced the forcing data.
+It must have the same value as the variant_label DRS element of the driving CMIP6 simulation (r<k>i<l>p<m>f<n>, see <a href="https://goo.gl/v1drZl">CMIP6 DRS Appendix 1:  Global Attributes for Labeling Experiments</a>).
+For the evaluation experiment driven by ERA5 it is "r1i1p1f1".
+For all invariant fields (frequency = fx, e.g. orog or sftlf), <code>driving_variant_label</code> must be the same as variant_label of the driving CMIP6 simulation (e.g. r1i1p1f1, r2i1p1f1, etc.); r0i0p0f0 is not allowed.</n></m></l></k></p>
+<p><code>institution_id</code> (CV to register) is an identifier for the institution that is responsible for generating and providing CORDEX simulations.
+All CORDEX institutions must be registered to publish their simulations on ESGF.
+See instructions on <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv">how to register an institution</a> and the current state of the <a href="https://wcrp-cordex.github.io/cordex-cmip6-cv/CORDEX-CMIP6_institution_id.html">CORDEX-CMIP6 institution id CV</a>.</p>
+<p><code>source_id</code> (CV to register) is an identifier (acronym) of the CORDEX RCM.
+All CORDEX RCMs must be registered to publish their simulations on ESGF.
+See instructions on <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv">how to register a model</a> and the current state of the <a href="https://wcrp-cordex.github.io/cordex-cmip6-cv/CORDEX-CMIP6_source_id.html">CORDEX-CMIP6 source id CV</a>.
+Different configurations of the same RCM such as different combinations of parameterization schemes or changes in parameters for existing schemes must be reflected in source_id by a free text suffix (e.g. RCM123, RCM123A for Africa or RCM123T for the tropics).
+RCM simulations with spectral nudging must use the "SN" suffix in source_id (e.g. RCM123-SN) while RCM simulations with Newtonian/dynamical nudging must use the "NN" suffix (e.g. RCM123-NN).</p>
+<p><code>version_realization</code> (structured form) is a combination that identifies i) versions of CORDEX datasets (simulations) related to technical, configuration, or postprocessing errors and ii) realizations with different initial conditions for RCMs.
+This DRS element has the form "vN-rM".
+"N" in the version part "vN" is 1 for the first release of dataset (v1) and sequential numbers (2, 3, 4, etc.) for any rerun or re-processing of the dataset (v2, v3, v4, etc.).
+The later version always supersedes the earlier version.
+"M'' in the realization part "rM" is sequential numbers (1, 2, 3 etc.) that reflect multiple RCM simulations with perturbed initial conditions (r1, r2, r3, etc.) driven by the same GCM and the same GCM member.
+The version and realization parts are separated by a dash "-" (e.g. v1-r1, v1-r2, v1-r3).
+The version part of this DRS element should not be confused with the ESGF-related DRS element version that has the form "vYYYYMMDD '' and is only included in the ESGF directory structure (see <a href="#4-esgf-directory-structure">4. ESGF Directory Structure</a>).</p>
+<p><code>frequency</code> (CV) is the output frequency indicator: 1hr - 1 hourly, 3hr - 3 hourly, 6hr - 6 hourly, day - daily, mon - monthly, and fx - invariant fields; see the <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_frequency.json">CORDEX-CMIP6 frequency CV</a>.</p>
+<p><code>StartTime</code> and <code>EndTime</code> (structured form) indicate the time span of the file content.
+The format is YYYY[MM[DD[hhmm]]], i.e. the year is represented by 4 digits, while the month, day, hour, and minutes are represented by exactly 2 digits, if they are present at all (monthly output - YYYYMM, daily – YYYYMMDD, sub-daily - YYYYMMDDhhmm).
+The <code>StartTime</code> and <code>EndTime</code> of sub-daily instantaneous and average data are based on the time values of the first and last record in the file.
+The two dates are separated by a dash.
+All time stamps refer to UTC.
+Constant fields (<code>frequency=fx</code>) do not have the <code>StartTime</code>-<code>EndTime</code> element in their file names.</p>
+<p><code>activity_id</code> (CV) - an identifier of different CORDEX activities such as dynamical downscaling (DD) and empirical-statistical downscaling (ESD), see the <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_activity_id.json">CORDEX-CMIP6 activity id CV</a>.</p>
+<p><code>project_id</code> (CV) - project identifier ("CORDEX-CMIP6" is the only option)</p>
+<h2 id="2-global-attributes">2. Global attributes<a class="headerlink" href="#2-global-attributes" title="Permanent link">¶</a></h2>
+<p><strong>Table 1:</strong> CORDEX-CMIP6 global attribute description (see examples in section <a href="#136-global-attributes">13.6</a>) and comparison with CORDEX-CMIP5</p>
+<table>
+<thead>
+<tr>
+<th>CORDEX-CMIP6 global attribute</th>
+<th>description</th>
+<th>examples</th>
+<th style="text-align: center;">corresponding attribute in CORDEX-CMIP5</th>
+<th style="text-align: center;">form</th>
+<th style="text-align: center;">when required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>activity_id</td>
+<td>an identifier of different CORDEX activities as dynamical downscaling (DD) or empirical- statistical downscaling (ESD). <strong>Used in faceted searches, part of DRS.</strong></td>
+<td>"DD" is the only option,  (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_activity_id.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>additional information about the data or methods used to produce the simulation</td>
+<td>-</td>
+<td style="text-align: center;">comment</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>contact information of the institution that is responsible for CORDEX simulations (avoid personal contact information)</td>
+<td>-</td>
+<td style="text-align: center;">contact</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>Conventions</td>
+<td>Climate and Forecast (CF) metadata conventions version</td>
+<td>"CF-1.11" is the only option.</td>
+<td style="text-align: center;">Conventions</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>creation_date</td>
+<td>date when the file was created in format  YYYY-MM-DDTHH:MM:SSZ</td>
+<td>"2023-01-15T14:30:23Z"</td>
+<td style="text-align: center;">creation_date</td>
+<td style="text-align: center;">structured form</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>domain</td>
+<td>name of the CORDEX region</td>
+<td>"Africa", "South-East Asia"  (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>domain_id</td>
+<td>an identifier assigned to each CORDEX region including a flag for resolution.  <strong>Used in faceted searches, part of DRS.</strong></td>
+<td>"AFR-25", "SEA-25"  (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json">reference CV</a>)</td>
+<td style="text-align: center;">CORDEX_domain</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>driving_experiment</td>
+<td>short description of the  reanalysis-driven experiment or the driving CMIP6 experiment</td>
+<td>"evaluation run with reanalysis forcing", "all-forcing simulation of the recent past", "gap-filling scenario reaching 7.0 based on SSP3"  (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json">reference CV</a>)</td>
+<td style="text-align: center;">experiment</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>driving_experiment_id</td>
+<td>an identifier of the  reanalysis-driven experiment or the driving CMIP6 experiment.  <strong>Used in faceted searches, part of DRS.</strong></td>
+<td>"evaluation", "historical", "ssp370"  (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json">reference CV</a>)</td>
+<td style="text-align: center;">experiment_id</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>driving_institution_id</td>
+<td>an identifier of the institution that is responsible for the driving reanalysis or CMIP6 simulation</td>
+<td>"ECMWF"  (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_institution_id.json">reference CV</a>)</td>
+<td style="text-align: center;">part of driving_model_id</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>driving_source_id</td>
+<td>reanalysis or CMIP6 model identifier  <strong>Used in faceted searches, part of DRS</strong>.</td>
+<td>"ERA5"  (<a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_source_id.json">reference CV</a>)</td>
+<td style="text-align: center;">part of driving_model_id</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>driving_variant_label</td>
+<td>variant_label of the CMIP6 simulation or driving reanalysis.  <strong>Used in faceted searches, part of DRS</strong>.</td>
+<td>"r1i1p1f1", "r2i1p1f1"</td>
+<td style="text-align: center;">driving_model_ensemble_member (ensemble_member in CMIP5)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>sampling frequency <strong>Used in faceted searches, part of DRS.</strong></td>
+<td>day, mon, 6hr, 3hr, 1hr, fx  (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_frequency.json">reference CV</a>)</td>
+<td style="text-align: center;">frequency</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>grid</td>
+<td>provides information about the horizontal grid and regridding procedure</td>
+<td>see note 1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>history</td>
+<td>a timestamped trail for modifications to the original data, as suggested by the CF conventions</td>
+<td>-</td>
+<td style="text-align: center;">history</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>full name of the institution that is responsible for CORDEX simulations</td>
+<td>(see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json">reference CV</a>)</td>
+<td style="text-align: center;">institution</td>
+<td style="text-align: center;">CV to register</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>institution_id</td>
+<td>an identifier of the institution that is responsible for CORDEX simulations <strong>Used in faceted searches, part of DRS.</strong></td>
+<td>(see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json">reference CV</a>)</td>
+<td style="text-align: center;">institute_id</td>
+<td style="text-align: center;">CV to register</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>license</td>
+<td>provides information about the license</td>
+<td>"<a href="https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use">https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use</a>" is the only option</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>mip_era</td>
+<td>determines what cycle of CMIP defines experiment and data specifications</td>
+<td>"CMIP6" is the only option.</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>product</td>
+<td>product type <strong>Used in faceted searches.</strong></td>
+<td>"model-output" is the only option</td>
+<td style="text-align: center;">product</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>project_id</td>
+<td>project identifier  <strong>Used in faceted searches, part of DRS</strong>.</td>
+<td>"CORDEX-CMIP6" is the only option.</td>
+<td style="text-align: center;">project_id</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>references</td>
+<td>published or web-based references that describe the data, model or methods used</td>
+<td>-</td>
+<td style="text-align: center;">references</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never</td>
+</tr>
+<tr>
+<td>source</td>
+<td>full model name/version</td>
+<td>see "label_extended" in <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json">reference CV</a></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV to register</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>source_id</td>
+<td>model identifier (acronym) <strong>Used in faceted searches, part of DRS</strong>.</td>
+<td>see "source_id" in <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json">reference CV</a></td>
+<td style="text-align: center;">part of model_id</td>
+<td style="text-align: center;">CV to register</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>model configuration <strong>Used in faceted searches</strong></td>
+<td>"ARCM", "AORCM", "AGCM", "AOGCM" (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_type.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>tracking_id</td>
+<td>unique file identifier</td>
+<td>see note 3</td>
+<td style="text-align: center;">tracking_id</td>
+<td style="text-align: center;">structured form</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>variable_id</td>
+<td>variable identifier <strong>Used in faceted searches, part of DRS.</strong></td>
+<td>"tas", "pr" (see <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables">CORDEX-CMIP6 CMOR Tables</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>version_realization</td>
+<td>identifies versions of CORDEX datasets and RCM realizations  <strong>Used in faceted searches, part of DRS</strong>.</td>
+<td>"v1-r1", "v2-r1", "v1-r2"</td>
+<td style="text-align: center;">rcm_version_id</td>
+<td style="text-align: center;">structured form</td>
+<td style="text-align: center;">always</td>
+</tr>
+<tr>
+<td>version_realization_info</td>
+<td>description of version_realization if it is not "v1-r1"</td>
+<td>see note 2</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never but recommended</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1 notes:</p>
+<ol>
+<li>
+<p>The "grid" global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid (see note 10 in <a href="https://goo.gl/v1drZl">CMIP6 DRS</a>).  Here are some examples:
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>   <span class="n">grid</span> <span class="o">=</span> <span class="s2">"Lambert conic conformal with 25 km grid spacing"</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>   <span class="n">grid</span> <span class="o">=</span> <span class="s2">"Rotated-pole latitude-longitude with 0.22 degree grid spacing"</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>   <span class="n">grid</span> <span class="o">=</span> <span class="s2">"Rotated-pole latitude-longitude with 0.11 degree grid spacing, interpolated by 2nd order conservative remapping    from the original unstructured icosahedral ICON grid R13B05 (~12.1 km)"</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>   <span class="n">grid</span> <span class="o">=</span> <span class="s2">"Rotated-pole latitude-longitude with 0.22 degree grid spacing; ocean grid Mediterranean Sea only, 9-12 km with a tilted and stretched grid at the Gibraltar Strait"</span>
+</code></pre></div>
+</li>
+<li>
+<p>The <code>version_realization_info</code> global attribute provides information on how  new reruns (e.g. v2, v3, etc.) and/or realizations (e.g. r2, r3, etc.) are generated; recommended if the <code>version_realization</code> is not v1-r1.</p>
+</li>
+<li>
+<p><code>tracking_id</code> must be of the form <code>&lt;PID&gt;/&lt;uuid&gt;</code> where PID is a Persistent Identifier (<code>hdl:21.14103</code> for CORDEX-CMIP6) and  uuid is a Universally Unique IDentifier e.g. <code>hdl:21.14103/187fcd6c-7cc6-11ee-9481-7824afb1963b</code>. The <code>tracking_id</code> should be unique for each CORDEX-CMIP6 file published in ESGF.  The <code>&lt;uuid&gt;</code> should be generated using the OSSP utility which supports a number of different DCE 1.1 variant UUID options.  For CORDEX-CMIP6, version 4 (random number based) is required.  Download the software from <a href="http://www.ossp.org/pkg/lib/uuid/">OSSP uuid</a>. (see note 15 in <a href="https://goo.gl/v1drZl">CMIP6 DRS</a>).</p>
+</li>
+</ol>
+<h2 id="3-file-naming">3. File naming<a class="headerlink" href="#3-file-naming" title="Permanent link">¶</a></h2>
+<p>file_name=<code>&lt;variable_id&gt;_&lt;domain_id&gt;_&lt;driving_source_id&gt;_&lt;driving_experiment_id&gt;_&lt;driving_variant_label&gt;_&lt;institution_id&gt;_&lt;source_id&gt;_&lt;version_realization&gt;_&lt;frequency&gt;[_&lt;StartTime&gt;-&lt;EndTime&gt;].nc</code></p>
+<p>Examples:
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>tas_AFR-25_ERA5_evaluation_r1i1p1f1_INST_RCM123_v1-r1_mon_201101-202012.nc
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>tas_AFR-25_GCM_historical_r1i1p1f1_INST_RCM123_v1-r1_mon_201101-201412.nc
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>tas_AFR-25_GCM_ssp370_r1i1p1f1_INST_RCM123_v1-r1_mon_201501-202012.nc
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>orog_AFR-25_GCM_ssp370_r1i1p1f1_INST_RCM123_v1-r1_fx.nc
+</code></pre></div>
+In contrast to CORDEX-CMIP5: 
+<p>i) the institution that is responsible for CORDEX simulations (institution_id) and model acronym (source_id) are 2 different DRS elements, i.e. separated by the underscore "_" in the file name</p>
+<p>ii) the institution that is responsible for the driving CMIP6 simulation (driving_institution_id) is not a part of DRS and not included in the file name and ESGF directory structure.</p>
+<h2 id="4-esgf-directory-structure">4. ESGF directory structure<a class="headerlink" href="#4-esgf-directory-structure" title="Permanent link">¶</a></h2>
+<p>directory_structure=<code>&lt;project_id&gt;/&lt;activity_id&gt;/&lt;domain_id&gt;/&lt;institution_id&gt;/&lt;driving_source_id&gt;/&lt;driving_experiment_id&gt;/&lt;driving_variant_label&gt;/&lt;source_id&gt;/&lt;version_realization&gt;/&lt;frequency&gt;/&lt;variable_id&gt;/&lt;version&gt;/</code></p>
+<p>The  <version> DRS element indicates an approximate date of model output files or publication on ESGF and has the form "vYYYYMMDD" (e.g., "v20231206").
+ This is the only DRS element that is not stored as a global attribute.
+Note that files contained in a single <version>  subdirectory at the end of the directory path should represent all the available time-samples reported from the simulation; a time-series can be split across several files, but all the files must be found in the same subdirectory.
+This implies that <version> will not generally be the actual date that all files in the subdirectory were written or published (see also Directory structure template in <a href="https://goo.gl/v1drZl">CMIP6 DRS</a>).</version></version></version></p>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>/CORDEX-CMIP6/DD/AFR-25/INST/ERA5/evaluation/r1i1p1f1/RCM123/v1-r1/mon/tas/v20240319
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>/CORDEX-CMIP6/DD/AFR-25/INST/GCM/historical/r1i1p1f1/RCM123/v1-r1/mon/tas/v20240319
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>/CORDEX-CMIP6/DD/AFR-25/INST/GCM/ssp370/r1i1p1f1/RCM123/v1-r1/mon/tas/v20240319
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>/CORDEX-CMIP6/DD/AFR-25/INST/GCM/ssp370/r1i1p1f1/RCM123/v1-r1/fx/orog/v20240319
+</code></pre></div>
+<h2 id="5-file-format">5. File format<a class="headerlink" href="#5-file-format" title="Permanent link">¶</a></h2>
+<p>Data files must be in  NetCDF format, version 4, using the NetCDF 4 classic data model.
+It is recommended that data should be compressed by using "deflate level" 1 and with "shuffle" turned on.
+Data files must conform to the <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html">CF Conventions 1.11</a>.</p>
+<p>Each file may contain only one output field (target variable) from a single simulation.
+It must include a target variable with attributes defined in the <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables">CORDEX-CMIP6 CMOR tables</a> and coordinate variables.
+The entire time series of a target variable is to be distributed over several files as described in section <a href="#8-time-period-for-each-data-file">8 Time period for each data file</a>.</p>
+<p>All output fields must be single precision (type NC_FLOAT), while all coordinate variables (time and space) must be double precision (type NC_DOUBLE).
+All missing data must be assigned the single precision floating point value of 1.e20.</p>
+<h2 id="6-cordex-domains-and-horizontal-coordinates">6. CORDEX domains and horizontal coordinates<a class="headerlink" href="#6-cordex-domains-and-horizontal-coordinates" title="Permanent link">¶</a></h2>
+<p>The CORDEX domains are defined in the <a href="https://github.com/WCRP-CORDEX/domain-tables">CORDEX domain tables</a>.
+A domain must lie fully inside the RCM interior computational domain, i.e. in the area left once the relaxation zone is excluded.
+It is strongly recommended that RCMs using the rotated-pole coordinate system exactly follow the CORDEX grid definition provided.
+The rotated-pole coordinate system is always defined in terms of rotation of the North Pole in accordance with <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#grid-mappings-and-projections">CF-1.11</a>.
+All variables from a simulation must be provided on the same grid (i.e., variables on staggered grids must be regridded to the standard grid).
+Zonal and meridional winds must be provided as real north- and eastward winds if the RCM uses a coordinate system/projection that does not coincide with real north- and eastward directions (e.g. the rotated pole, Lambert Conformal, etc.).</p>
+<p>The domain acronym is ‘domain name’-‘resolution’, where ‘resolution’ is the nearest grid spacing in km of the 3 resolutions used in CORDEX-CMIP5 and CORDEX-CMIP6 (50, 25 and 12 km).
+Changing ‘resolution’ from degrees, which are related only to the rotated coordinate system (CORDEX-CMIP5), to the more common kilometres allows us to unify the terminology used in CORDEX, making it easily understandable by all users.
+For example, "AFR-25" means the CORDEX-Africa domain with 25 km resolution in a projected coordinate system and 0.22° resolution in the rotated pole coordinate system.
+The resolution flag indicates the resolution of the atmospheric component of CORDEX models.
+The domain acronyms for the regular grids are the same as those for the corresponding model grid with the letter 'i' appended to the resolution (e.g. "AFR-25i").</p>
+<p>Data must  be provided for the CORDEX domain only, i.e. the relaxation zones must be removed before the data is delivered.
+Names of the CORDEX domains are provided in <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json">CORDEX-CMIP6 domain id CV</a>.</p>
+<p>Data files must contain a full description of native coordinate systems used by RCMs:</p>
+<ul>
+<li>
+<p>the 1-dimensional coordinate variables (e.g. rlon and rlat for the rotated pole coordinate system or x and y for the Lambert Conformal Conic (LCC) projection),</p>
+</li>
+<li>
+<p>grid mapping variable crs<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> describing the coordinate reference system and</p>
+</li>
+<li>
+<p>the variable attribute - <code>grid_mapping = "crs"</code></p>
+</li>
+</ul>
+<p>in accordance with <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#grid-mappings-and-projections">CF-1.11</a> (see examples <a href="#131-rotated-pole-coordinate-system">13.1</a> and <a href="#132-lambert-conformal-conic-projection">13.2</a>).
+The grid mapping variable crs is of arbitrary type (e.g. char or int) since it contains no data.
+The shape and size of the Earth used for the model grid must be specified.
+For a spherical earth this is done via the crs attribute earth_radius.
+If a model grid specifies an ellipsoid for the shape of the earth then see <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#appendix-grid-mappings">CF-1.11 Appendix F</a>.</p>
+<p>The 2-dimensional geographic latitudes and longitudes of the model grid cells (lon and lat) must be also provided as auxiliary coordinates.
+Longitude coordinates must be strictly monotonically increasing and confined to the range -180 to 360; they must also have absolute values as small as possible given the first two constraints (e.g., store 170 E to 170 W as 170 to 190, but store 150 W to 130 W as -150 to -130, not 210 to 230). </p>
+<p>For models with native unstructured grids, it is up to the regional CORDEX communities to decide whether data must be remapped to one of the regular lat-lon domain grids (e.g., AFR-25i) or to the most common native RCM grid used for a specific CORDEX domain.</p>
+<h2 id="7-time-coordinate">7. Time coordinate<a class="headerlink" href="#7-time-coordinate" title="Permanent link">¶</a></h2>
+<p>The units of the time coordinate is <code>days since 1950-01-01</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> for all files.
+The earlier reference date <code>days since 1850-01-01</code> is also allowed if a RCM group downscales a longer period that includes the pre-1950 era.
+All time dependent variables must have an attribute <code>cell_methods: time</code> with values provided in the <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables">CORDEX-CMIP6 CMOR tables</a>.</p>
+<p>The time value of the instantaneous data is [0Z, 6Z, 12Z, 18Z], [0Z, 3Z, 6Z, 9Z, 12Z, 15Z, 18Z, 21Z], and [0Z, 1Z, 2Z, 3Z, ..., 20Z, 21Z, 22Z, 23Z]  of each day for the 6-, 3-, and 1-hourly data respectively.</p>
+<p>Variables that are representative of an interval (averages, maxima, minima, sum) must use the midpoints of the time intervals (bounds) as time coordinate values.
+Therefore, these variables have the time values 0.5Z, 1.5Z, 2.5Z, ..., 23.5Z (1-hourly); 1.5Z, 4.5Z, 7.5Z, ... 22.5Z (3-hourly); 3Z, 9Z, 15Z, 21Z (6-hourly); 12Z (daily); Jan 16 12Z, Feb 15 0Z; (monthly, non leap years); Jan 16 12Z, Feb 12Z (monthly, leap years); Jan 16 0Z, Feb 16 0Z (monthly, 360 day); etc.</p>
+<p>Furthermore, interval variables must have a <code>time_bnds</code> field of dimensions <code>(ntimes,2)</code>, where <code>ntimes</code> is the dimension of the time coordinate (see an example in section <a href="#134-time-coordinate">13.4</a>).
+Intervals for daily and monthly data should start and end at 00:00:00 UTC of the appropriate day.
+Intervals for sub-daily data should start and end at 00:00:00 UTC or an integer multiple of the frequency (1, 3, or 6 hours) from that point.</p>
+<p>The time variable must have a calendar attribute.
+Use of the proleptic-gregorian or standard calendar is strongly recommended when possible.
+Other calendars (360_day and 365_day) inherited from the driving models are also allowed.
+If the driving model uses the gregorian calendar (which is deprecated since CF-1.9), use the standard calendar.</p>
+<h2 id="8-time-period-for-each-data-file">8. Time period for each data file<a class="headerlink" href="#8-time-period-for-each-data-file" title="Permanent link">¶</a></h2>
+<p>The time spans to be included in a single file depend on the aggregation, which is 1-hourly, 6-hourly, daily, monthly, or invariant:</p>
+<ul>
+<li>1-hourly or 6-hourly: one year,  </li>
+<li>daily: 5 years, or less if some of the years in the 5-year period are unavailable,  </li>
+<li>monthly: 10 years, or less if some of the years in the 10-year period are unavailable,  </li>
+<li>invariant: single file.</li>
+</ul>
+<p>Files should always contain full years if the data are available, but are allowed to be shorter if it is not.</p>
+<p>Files with monthly data start with years that end with '1' or the first year of the experiment; they end with '0' or the last year of the experiment.
+Daily data files start with years that end with '1' or '6' or the first experiment year; the last year they contain ends with '5' or '0' or is the last experiment year.
+For example, the ERA5-driven evaluation experiment for 1979-2021 with 1979 as a spin-up:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">monthly</th>
+<th style="text-align: center;">daily</th>
+<th style="text-align: center;">subdaily</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1980-1980<br/>1981-1990<br/>1991-2000<br/>2001-2010<br/>2011-2020<br/>2021-2021</td>
+<td style="text-align: center;">1980-1980<br/>1981-1985<br/>1986-1990<br/>...<br/>2016-2020<br/>2021-2021</td>
+<td style="text-align: center;">1980-1980<br/>1981-1981<br/>1982-1982<br/>...<br/>2020-2020<br/>2021-2021</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-license">9. License<a class="headerlink" href="#9-license" title="Permanent link">¶</a></h2>
+<p>All CORDEX modeling groups choose a license for their CMIP6-driven simulations depending on institutional and/or funding agency policies.
+This information is necessary to register a RCM in the <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json">CORDEX-CMIP6 source id CV.</a> It is strongly recommended to use the Creative Commons Attribution 4.0 International (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) license, as is currently used in <a href="https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html">CMIP6</a>.
+Note, that any kind of "non-commercial" license will significantly limit the use of the data in downstream climate mitigation and adaptation applications.</p>
+<p>The global attribute license has the only option "<a href="https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use">https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use</a>" leading to the CORDEX-CMIP6 Terms of Use page.</p>
+<h2 id="10-registration">10. Registration<a class="headerlink" href="#10-registration" title="Permanent link">¶</a></h2>
+<p>All institutions (modelling groups) that contribute or plan to contribute to CORDEX-CMIP6 must</p>
+<ol>
+<li>
+<p>register their institution and model following the instructions on <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv">how to register institutions and models</a> and </p>
+</li>
+<li>
+<p>provide information about their planned simulations in the <a href="https://github.com/WCRP-CORDEX/simulation-status">CORDEX-CMIP6 downscaling plan</a>. </p>
+</li>
+</ol>
+<p>The modelling groups will not be able to publish their CORDEX-CMIP6 simulations on ESGF without first registering their institution and model.</p>
+<h2 id="11-esgf-search-facets-mapping">11. ESGF Search Facets Mapping<a class="headerlink" href="#11-esgf-search-facets-mapping" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>ESGF Search Facet</th>
+<th>CORDEX-CMIP6 DRS element or global attribute</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project</td>
+<td>project_id</td>
+<td>"CORDEX-CMIP6" is the only option (CV)</td>
+</tr>
+<tr>
+<td>Activity</td>
+<td>activity_id</td>
+<td>"DD" is the only option (CV)</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>product</td>
+<td>"model-output" is the only option (CV)</td>
+</tr>
+<tr>
+<td>Domain ID</td>
+<td>domain_id</td>
+<td>AFR-25, EUR-12, AFR-25i, etc. (CV)</td>
+</tr>
+<tr>
+<td>Driving Source ID</td>
+<td>driving_source_id</td>
+<td>ERA5 or CMIP6 models (CV)</td>
+</tr>
+<tr>
+<td>Source ID</td>
+<td>source_id</td>
+<td>CORDEX models (CV)</td>
+</tr>
+<tr>
+<td>Institution ID</td>
+<td>institution_id</td>
+<td>CORDEX institutions (CV)</td>
+</tr>
+<tr>
+<td>Source Type</td>
+<td>source_type</td>
+<td>ARCM, AORCM, AGCM, AOGCM (CV)</td>
+</tr>
+<tr>
+<td>Experiment ID</td>
+<td>driving_experiment_id</td>
+<td>evaluation, historical, ssp370, etc. (CV)</td>
+</tr>
+<tr>
+<td>Variant Label</td>
+<td>driving_variant_label</td>
+<td>r1i1p1f1, r2i1p1f1, etc. (structured form)</td>
+</tr>
+<tr>
+<td>Version-Realization</td>
+<td>version_realization</td>
+<td>v1-r1, v2-r1, v1-r2, etc. (structured form)</td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td>frequency</td>
+<td>mon, day, 6hr, 1hr, fx (CV)</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>variable_id</td>
+<td>tas, pr, tasmax, etc. (CMOR tables)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-user-support">12. User support<a class="headerlink" href="#12-user-support" title="Permanent link">¶</a></h2>
+<p>In case of any questions or doubts please create an issue in <a href="https://github.com/WCRP-CORDEX/cordex-cmip6-cv">https://github.com/WCRP-CORDEX/cordex-cmip6-cv</a>. </p>
+<h2 id="acknowledgments">Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permanent link">¶</a></h2>
+<p>We thank all who provided their valuable comments and suggestions on the CORDEX-CMIP6 archiving specifications for dynamical downscaling.</p>
+<h2 id="13-examples">13. Examples<a class="headerlink" href="#13-examples" title="Permanent link">¶</a></h2>
+<h3 id="131-rotated-pole-coordinate-system">13.1 Rotated Pole Coordinate System<a class="headerlink" href="#131-rotated-pole-coordinate-system" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>char crs ;
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    crs:grid_mapping_name = "rotated_latitude_longitude" ;
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>    crs:grid_north_pole_latitude = 39.25 ;
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>    crs:grid_north_pole_longitude = -162. ;
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>    crs:earth_radius = 6371229. ;
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>double rlon(rlon) ;
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>    rlon:standard_name = "grid_longitude" ;
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>    rlon:long_name = "longitude in rotated pole grid" ;
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>    rlon:units = "degrees" ;
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>double rlat(rlat) ;
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>    rlat:standard_name = "grid_latitude" ;
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>    rlat:long_name = "latitude in rotated pole grid" ;
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>    rlat:units = "degrees" ;
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>double lon(rlat, rlon) ;
+<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>    lon:standard_name = "longitude" ;
+<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>    lon:long_name = "longitude" ;
+<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>    lon:units = "degrees_east" ;
+<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a>
+<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a>double lat(rlat, rlon) ;
+<a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a>    lat:standard_name = "latitude" ;
+<a href="#__codelineno-3-24" id="__codelineno-3-24" name="__codelineno-3-24"></a>    lat:long_name = "latitude" ;
+<a href="#__codelineno-3-25" id="__codelineno-3-25" name="__codelineno-3-25"></a>    lat:units = "degrees_north" ;
+<a href="#__codelineno-3-26" id="__codelineno-3-26" name="__codelineno-3-26"></a>
+<a href="#__codelineno-3-27" id="__codelineno-3-27" name="__codelineno-3-27"></a>float pr(time, rlat, rlon) ;
+<a href="#__codelineno-3-28" id="__codelineno-3-28" name="__codelineno-3-28"></a>    pr:standard_name = "precipitation_flux" ;
+<a href="#__codelineno-3-29" id="__codelineno-3-29" name="__codelineno-3-29"></a>    pr:long_name = "Precipitation" ;
+<a href="#__codelineno-3-30" id="__codelineno-3-30" name="__codelineno-3-30"></a>    pr:units = "kg m-2 s-1" ;
+<a href="#__codelineno-3-31" id="__codelineno-3-31" name="__codelineno-3-31"></a>    pr:coordinates = "lon lat" ;
+<a href="#__codelineno-3-32" id="__codelineno-3-32" name="__codelineno-3-32"></a>    pr:_FillValue = 1.e+20f ;
+<a href="#__codelineno-3-33" id="__codelineno-3-33" name="__codelineno-3-33"></a>    pr:missing_value = 1.e+20f ;
+<a href="#__codelineno-3-34" id="__codelineno-3-34" name="__codelineno-3-34"></a>    pr:cell_methods = "time: mean" ;
+<a href="#__codelineno-3-35" id="__codelineno-3-35" name="__codelineno-3-35"></a>    pr:grid_mapping = "crs" ;
+</code></pre></div>
+<h3 id="132-lambert-conformal-conic-projection">13.2 Lambert Conformal Conic projection<a class="headerlink" href="#132-lambert-conformal-conic-projection" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>int crs ;
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>    crs:grid_mapping_name = "lambert_conformal_conic" ;
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>    crs:standard_parallel = 49.5 ;
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>    crs:longitude_of_central_meridian = 10.5 ;
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>    crs:latitude_of_projection_origin = 49.5 ;
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>    crs:false_easting = 2925000. ;
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>    crs:false_northing = 2925000. ;
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>    crs:earth_radius = 6371229. ;
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>double x(x) ;
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>    x:standard_name = "projection_x_coordinate" ;
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a>    x:long_name = "X Coordinate Of Projection" ;
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>    x:units = "m" ;
+<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a>
+<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a>double y(y) ;
+<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a>    y:standard_name = "projection_y_coordinate" ;
+<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a>    y:long_name = "Y Coordinate Of Projection" ;
+<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a>    y:units = "m" ;
+<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a>
+<a href="#__codelineno-4-20" id="__codelineno-4-20" name="__codelineno-4-20"></a>double lon(y, x) ;
+<a href="#__codelineno-4-21" id="__codelineno-4-21" name="__codelineno-4-21"></a>    lon:standard_name = "longitude" ;
+<a href="#__codelineno-4-22" id="__codelineno-4-22" name="__codelineno-4-22"></a>    lon:long_name = "longitude" ;
+<a href="#__codelineno-4-23" id="__codelineno-4-23" name="__codelineno-4-23"></a>    lon:units = "degrees_east" ;
+<a href="#__codelineno-4-24" id="__codelineno-4-24" name="__codelineno-4-24"></a>
+<a href="#__codelineno-4-25" id="__codelineno-4-25" name="__codelineno-4-25"></a>double lat(y, x) ;
+<a href="#__codelineno-4-26" id="__codelineno-4-26" name="__codelineno-4-26"></a>    lat:standard_name = "latitude" ;
+<a href="#__codelineno-4-27" id="__codelineno-4-27" name="__codelineno-4-27"></a>    lat:long_name = "latitude" ;
+<a href="#__codelineno-4-28" id="__codelineno-4-28" name="__codelineno-4-28"></a>    lat:units = "degrees_north" ;
+<a href="#__codelineno-4-29" id="__codelineno-4-29" name="__codelineno-4-29"></a>
+<a href="#__codelineno-4-30" id="__codelineno-4-30" name="__codelineno-4-30"></a>float pr(time, y, x) ;
+<a href="#__codelineno-4-31" id="__codelineno-4-31" name="__codelineno-4-31"></a>    pr:standard_name = "precipitation_flux" ;
+<a href="#__codelineno-4-32" id="__codelineno-4-32" name="__codelineno-4-32"></a>    pr:long_name = "Precipitation" ;
+<a href="#__codelineno-4-33" id="__codelineno-4-33" name="__codelineno-4-33"></a>    pr:units = "kg m-2 s-1" ;
+<a href="#__codelineno-4-34" id="__codelineno-4-34" name="__codelineno-4-34"></a>    pr:coordinates = "lon lat" ;
+<a href="#__codelineno-4-35" id="__codelineno-4-35" name="__codelineno-4-35"></a>    pr:_FillValue = 1.e+20f ;
+<a href="#__codelineno-4-36" id="__codelineno-4-36" name="__codelineno-4-36"></a>    pr:missing_value = 1.e+20f ;
+<a href="#__codelineno-4-37" id="__codelineno-4-37" name="__codelineno-4-37"></a>    pr:cell_methods = "time: mean" ;
+<a href="#__codelineno-4-38" id="__codelineno-4-38" name="__codelineno-4-38"></a>    pr:grid_mapping = "crs" ;
+</code></pre></div>
+<h3 id="133-vertical-coordinate-depth">13.3 Vertical coordinate depth<a class="headerlink" href="#133-vertical-coordinate-depth" title="Permanent link">¶</a></h3>
+<p>a surface model with 4 layers:  layer 1: 0-7cm, layer 2: 7-28cm, layer 3: 28-100cm, layer 4: 100-289cm</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>dimensions:
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>  bnds = 2 ;
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>  depth = 4 ;
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>variables:
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>  double depth(depth) ;
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>    depth:standard_name = "depth" ;
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>    depth:long_name = "depth" ;
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>    depth:units = "m" ;    
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a>    depth:bounds = "depth_bnds" ;
+<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a>    depth:positive = "down" ;
+<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a>
+<a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a>  double depth_bnds(depth, bnds) ;
+<a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a>
+<a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a>data:
+<a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a>
+<a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a>  depth = 0.035, 0.175, 0.64, 1.945 ;
+<a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a>
+<a href="#__codelineno-5-20" id="__codelineno-5-20" name="__codelineno-5-20"></a>  depth_bnds =
+<a href="#__codelineno-5-21" id="__codelineno-5-21" name="__codelineno-5-21"></a>    0, 0.7,
+<a href="#__codelineno-5-22" id="__codelineno-5-22" name="__codelineno-5-22"></a>    0.7, 0.28,
+<a href="#__codelineno-5-23" id="__codelineno-5-23" name="__codelineno-5-23"></a>    0.28, 1,
+<a href="#__codelineno-5-24" id="__codelineno-5-24" name="__codelineno-5-24"></a>    1, 2.89 ;
+</code></pre></div>
+<h3 id="134-time-coordinate">13.4 Time coordinate<a class="headerlink" href="#134-time-coordinate" title="Permanent link">¶</a></h3>
+<p>for a daily variable representative of an interval (e.g. pr, tasmax)</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>dimensions:
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>   time = UNLIMITED ;
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>   bnds = 2 ;
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>variables:
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>   double time(time);
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a>      time:long_name = "time";
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a>      time:units = "days since 1950-01-01";
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a>      time:calendar = "standard"
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a>      time:bounds = "time_bnds";
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a>
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a>   double time_bnds(time, bnds) ;
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a>
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a>data:
+<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a>
+<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a>   time = 0.5, 1.5, 2.5, ... ;
+<a href="#__codelineno-6-19" id="__codelineno-6-19" name="__codelineno-6-19"></a>
+<a href="#__codelineno-6-20" id="__codelineno-6-20" name="__codelineno-6-20"></a>   time_bnds = 
+<a href="#__codelineno-6-21" id="__codelineno-6-21" name="__codelineno-6-21"></a>      0, 1,
+<a href="#__codelineno-6-22" id="__codelineno-6-22" name="__codelineno-6-22"></a>      1, 2,
+<a href="#__codelineno-6-23" id="__codelineno-6-23" name="__codelineno-6-23"></a>      2, 3,
+<a href="#__codelineno-6-24" id="__codelineno-6-24" name="__codelineno-6-24"></a>      ... ;
+</code></pre></div>
+<h3 id="135-scalar-coordinate-variables">13.5 Scalar coordinate variables<a class="headerlink" href="#135-scalar-coordinate-variables" title="Permanent link">¶</a></h3>
+<p>for variables on individual levels (e.g. at 2 meters, or at 850 hPa), do not include an extra dimension of size 1.
+Use a <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#scalar-coordinate-variables">CF scalar coordinate variable</a> instead.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>variables:
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>    double height ;
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>        height:units = "m" ;
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>        height:axis = "Z" ;
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>        height:positive = "up" ;
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>        height:long_name = "height" ;
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>        height:standard_name = "height" ;
+<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a>    float tas(time, rlat, rlon) ;
+<a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a>        [...]
+<a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a>        tas:coordinates = "height lat lon" ;
+<a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a>data:
+<a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a>
+<a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a>   height = 2. ;
+</code></pre></div>
+<h3 id="136-global-attributes">13.6 Global attributes<a class="headerlink" href="#136-global-attributes" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>// global attributes:
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>  :Conventions = "CF-1.11" ;
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>  :activity_id = "DD" ;
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>  :comment = "optional" ;
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a>  :contact = "[cordex-data@iircm.org](mailto:cordex-data@iircm.org)" ;
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a>  :creation_date = "2023-11-19T18:01:15Z" ; 
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a>  :domain = "Africa" ;
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>  :domain_id = "AFR-25" ;
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a>  :driving_experiment = "reanalysis simulation of the recent past" ;
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a>  :driving_experiment_id = "evaluation" ;
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a>  :driving_institution_id = "ECMWF" ;
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a>  :driving_source_id = "ERA5" ;
+<a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a>  :driving_variant_label = "r1i1p1f1" ;
+<a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a>  :frequency = "mon" ;
+<a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a>  :grid = "Lambert conic conformal with 25 km grid spacing"
+<a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a>  :institution = "Interdisciplinary Institute of Regional Climate Modeling" ;
+<a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a>  :institution_id = "IIRCM" ;
+<a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a>  :license = "[https://cordex.org/data-access/cordex-cmip6-data/  cordex-cmip6-terms-of-use](https://cordex.org/data-access/cordex-cmip6-data/  cordex-cmip6-terms-of-use)" ;
+<a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a>  :mip_era = "CMIP6" ;
+<a href="#__codelineno-8-20" id="__codelineno-8-20" name="__codelineno-8-20"></a>  :product = "model-output" ;
+<a href="#__codelineno-8-21" id="__codelineno-8-21" name="__codelineno-8-21"></a>  :project_id = "CORDEX-CMIP6" ;
+<a href="#__codelineno-8-22" id="__codelineno-8-22" name="__codelineno-8-22"></a>  :source = "Interdisciplinary Regional Climate Model version 1" ;
+<a href="#__codelineno-8-23" id="__codelineno-8-23" name="__codelineno-8-23"></a>  :source_id = "InterRCM1" ;
+<a href="#__codelineno-8-24" id="__codelineno-8-24" name="__codelineno-8-24"></a>  :source_type = "ARCM" ;
+<a href="#__codelineno-8-25" id="__codelineno-8-25" name="__codelineno-8-25"></a>  :tracking_id = "hdl:21.14103/187fcd6c-7cc6-11ee-9481-7824afb1963b" 
+<a href="#__codelineno-8-26" id="__codelineno-8-26" name="__codelineno-8-26"></a>  :variable_id = "tas" ;
+<a href="#__codelineno-8-27" id="__codelineno-8-27" name="__codelineno-8-27"></a>  :version_realization = "v1-r1" ;
+</code></pre></div>
+<h2 id="14-version-history">14. Version history<a class="headerlink" href="#14-version-history" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Version</th>
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">v2</td>
+<td style="text-align: left;">2025-03-21</td>
+<td style="text-align: left;"><ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements (<a href="https://github.com/WCRP-CORDEX/archive-specifications/issues/22">#22</a>) </li><li><code>mip_era</code> is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only (<a href="https://github.com/WCRP-CORDEX/archive-specifications/issues/24">#24</a>) </li><li>Fixed example for <code>creation_date</code> global attribute (<a href="https://github.com/WCRP-CORDEX/archive-specifications/issues/19">#19</a>) </li><li>New example (13.5) illustrating scalar coordinate variables for height (<a href="https://github.com/WCRP-CORDEX/archive-specifications/issues/18">#18</a>) </li><li>Specify time coordinate origin, but not specific formatting (<a href="https://github.com/WCRP-CORDEX/archive-specifications/issues/5">#5</a>) </li><li>Allow grid mapping variable to match the grid_mapping_name (<a href="https://github.com/WCRP-CORDEX/archive-specifications/issues/17">#17</a>)</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: center;">v1</td>
+<td style="text-align: left;">2024-04-10</td>
+<td style="text-align: left;">Initial release on April, 10th, 2024.</td>
+</tr>
+</tbody>
+</table>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>The grid mapping variable is also allowed to be called after the CF standard grid_mapping_name used. This is the default hardcoded behaviour in the CMOR library as of version 3.9.0 (2024-08-28). Of course, the main variable corresponding grid_mapping attribute should then match this grid mapping variable name. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>The format of the reference date can be either "days since 1950-01-01" (preferred), "days since 1950-01-01 00:00:00", or "days since 1950-01-01T00:00:00Z" <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.footnote.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+</body>
+</html>

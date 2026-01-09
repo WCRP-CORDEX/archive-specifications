@@ -187,18 +187,18 @@ For models with native unstructured grids, it is up to the regional CORDEX commu
 
 ## 7. Time coordinate
 
-The units of the time coordinate is 'days since 1950-01-01'[^2] for all files.
-The earlier reference date "days since 1850-01-01" is also allowed if a RCM group downscales a longer period that includes the pre-1950 era.
-All time dependent variables must have an attribute 'cell_methods: time' with values provided in the [CORDEX-CMIP6 CMOR tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables).
+The units of the time coordinate is `days since 1950-01-01`[^2] for all files.
+The earlier reference date `days since 1850-01-01` is also allowed if a RCM group downscales a longer period that includes the pre-1950 era.
+All time dependent variables must have an attribute `cell_methods: time` with values provided in the [CORDEX-CMIP6 CMOR tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables).
 
 The time value of the instantaneous data is [0Z, 6Z, 12Z, 18Z], [0Z, 3Z, 6Z, 9Z, 12Z, 15Z, 18Z, 21Z], and [0Z, 1Z, 2Z, 3Z, ..., 20Z, 21Z, 22Z, 23Z]  of each day for the 6-, 3-, and 1-hourly data respectively.
 
 Variables that are representative of an interval (averages, maxima, minima, sum) must use the midpoints of the time intervals (bounds) as time coordinate values.
 Therefore, these variables have the time values 0.5Z, 1.5Z, 2.5Z, ..., 23.5Z (1-hourly); 1.5Z, 4.5Z, 7.5Z, ... 22.5Z (3-hourly); 3Z, 9Z, 15Z, 21Z (6-hourly); 12Z (daily); Jan 16 12Z, Feb 15 0Z; (monthly, non leap years); Jan 16 12Z, Feb 12Z (monthly, leap years); Jan 16 0Z, Feb 16 0Z (monthly, 360 day); etc.
 
-Furthermore, interval variables must have a time_bnds field of dimensions (ntimes,2), where ntimes is the dimension of the time coordinate (see an example in section [13.4](#134-time-coordinate)).
+Furthermore, interval variables must have a `time_bnds` field of dimensions `(ntimes,2)`, where `ntimes` is the dimension of the time coordinate (see an example in section [13.4](#134-time-coordinate)).
 Intervals for daily and monthly data should start and end at 00:00:00 UTC of the appropriate day.
- Intervals for sub-daily data should start and end at 00:00:00 UTC or an integer multiple of the frequency (1, 3, or 6 hours) from that point.
+Intervals for sub-daily data should start and end at 00:00:00 UTC or an integer multiple of the frequency (1, 3, or 6 hours) from that point.
 
 The time variable must have a calendar attribute.
 Use of the proleptic-gregorian or standard calendar is strongly recommended when possible.
@@ -264,7 +264,7 @@ The modelling groups will not be able to publish their CORDEX-CMIP6 simulations 
 
 In case of any questions or doubts please create an issue in [https://github.com/WCRP-CORDEX/cordex-cmip6-cv](https://github.com/WCRP-CORDEX/cordex-cmip6-cv). 
 
-**Acknowledgments**
+## Acknowledgments
 
 We thank all who provided their valuable comments and suggestions on the CORDEX-CMIP6 archiving specifications for dynamical downscaling.
 
@@ -475,8 +475,7 @@ data:
 
 | Version | Date | Comment |
 | :---: | :---- | :---- |
-| v3 | 2025-... | Fix inconsistent `driving_experiment_id` example for evaluation in Table 1 ([#26](https://github.com/WCRP-CORDEX/archive-specifications/issues/26)) |
-| v2 | 2025-03-21 | Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) mip_era is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) Fixed example for creation_date global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17)) |
+| v2 | 2025-03-21 | <ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) <li>`mip_era` is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) <li>Fixed example for `creation_date` global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) <li>New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) <li>Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) <li>Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17))</ul> |
 | v1 | 2024-04-10 | Initial release on April, 10th, 2024. |
 
 [^1]:  The grid mapping variable is also allowed to be called after the CF standard grid_mapping_name used. This is the default hardcoded behaviour in the CMOR library as of version 3.9.0 (2024-08-28). Of course, the main variable corresponding grid_mapping attribute should then match this grid mapping variable name.

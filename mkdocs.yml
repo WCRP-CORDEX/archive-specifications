@@ -43,6 +43,8 @@ plugins:
           explicit: true
           stylesheets:
             - assets/stylesheets/pdf.css
+          scripts:
+            - assets/scripts/pdf-header.js
       buttons:
         - title: Download as PDF
           icon: material-file-download-outline

@@ -446,7 +446,7 @@ data:
   :Conventions = "CF-1.11" ;
   :activity_id = "DD" ;
   :comment = "optional" ;
-  :contact = "[cordex-data@iircm.org](mailto:cordex-data@iircm.org)" ;
+  :contact = "cordex-data@iircm.org" ;
   :creation_date = "2023-11-19T18:01:15Z" ;	
   :domain = "Africa" ;
   :domain_id = "AFR-25" ;
@@ -459,7 +459,7 @@ data:
   :grid = "Lambert conic conformal with 25 km grid spacing"
   :institution = "Interdisciplinary Institute of Regional Climate Modeling" ;
   :institution_id = "IIRCM" ;
-  :license = "[https://cordex.org/data-access/cordex-cmip6-data/  cordex-cmip6-terms-of-use](https://cordex.org/data-access/cordex-cmip6-data/  cordex-cmip6-terms-of-use)" ;
+  :license = "https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use" ;
   :mip_era = "CMIP6" ;
   :product = "model-output" ;
   :project_id = "CORDEX-CMIP6" ;

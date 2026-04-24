@@ -58,7 +58,7 @@
   "driving_experiment": {
     "name": "driving_experiment",
     "description": "short description of the  reanalysis-driven experiment or the driving CMIP6 experiment",
-    "examples": "\"evaluation run with reanalysis forcing\", \"all-forcing simulation of the recent past\", \"gap-filling scenario reaching 7.0 based on SSP3\"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json))",
+    "examples": "\"reanalysis simulation of the recent past\", \"all-forcing simulation of the recent past\", \"gap-filling scenario reaching 7.0 based on SSP3\"  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json))",
     "cordex_cmip5_attribute": "experiment",
     "form": "CV",
     "when_required": "always"

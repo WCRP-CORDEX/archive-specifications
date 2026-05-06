@@ -63,9 +63,9 @@ RCM simulations with spectral nudging must use the "SN" suffix in source_id (e.g
 This DRS element has the form "vN-rM".
 "N" in the version part "vN" is 1 for the first release of dataset (v1) and sequential numbers (2, 3, 4, etc.) for any rerun or re-processing of the dataset (v2, v3, v4, etc.).
 The later version always supersedes the earlier version.
-"M'' in the realization part "rM" is sequential numbers (1, 2, 3 etc.) that reflect multiple RCM simulations with perturbed initial conditions (r1, r2, r3, etc.) driven by the same GCM and the same GCM member.
+"M" in the realization part "rM" is sequential numbers (1, 2, 3 etc.) that reflect multiple RCM simulations with perturbed initial conditions (r1, r2, r3, etc.) driven by the same GCM and the same GCM member.
 The version and realization parts are separated by a dash "-" (e.g. v1-r1, v1-r2, v1-r3).
-The version part of this DRS element should not be confused with the ESGF-related DRS element version that has the form "vYYYYMMDD '' and is only included in the ESGF directory structure (see [4. ESGF Directory Structure](#4-esgf-directory-structure)).
+The version part of this DRS element should not be confused with the ESGF-related DRS element version that has the form "vYYYYMMDD" and is only included in the ESGF directory structure (see [4. ESGF Directory Structure](#4-esgf-directory-structure)).
 
 `frequency` (CV) is the output frequency indicator: 1hr - 1 hourly, 3hr - 3 hourly, 6hr - 6 hourly, day - daily, mon - monthly, and fx - invariant fields; see the [CORDEX-CMIP6 frequency CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_frequency.json).
 
@@ -77,6 +77,11 @@ All time stamps refer to UTC.
 Constant fields (`frequency=fx`) do not have the `StartTime`-`EndTime` element in their file names.
 
 `activity_id` (CV) - an identifier of different CORDEX activities such as dynamical downscaling (DD) and empirical-statistical downscaling (ESD), see the [CORDEX-CMIP6 activity id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_activity_id.json).
+Regarding the activity described in this document (dynamical downscaling on standard CORDEX domains at continental scale; CORDEX-Domain), "DD" is the only option.
+However, other values are possible for other activities under the CORDEX-CMIP6 project, such as Flagship Pilot Studies (FPS), which will provide their own archiving specifications.
+`activity_id` can also be a space-separated list of activities if a simulation can belong to several of them.
+This is useful for faceted searches.
+In this case, the first entry in the list will be the only value used in the DRS path (see [Section 4](#4-esgf-directory-structure)).
 
 `project_id` (CV) - project identifier ("CORDEX-CMIP6" is the only option)
 
@@ -121,10 +126,10 @@ ii) the institution that is responsible for the driving CMIP6 simulation (drivin
 
 directory_structure=`<project_id>/<activity_id>/<domain_id>/<institution_id>/<driving_source_id>/<driving_experiment_id>/<driving_variant_label>/<source_id>/<version_realization>/<frequency>/<variable_id>/<version>/`
 
-The  <version> DRS element indicates an approximate date of model output files or publication on ESGF and has the form "vYYYYMMDD" (e.g., "v20231206").
+The `version` DRS element indicates an approximate date of model output files or publication on ESGF and has the form "vYYYYMMDD" (e.g., "v20231206").
  This is the only DRS element that is not stored as a global attribute.
-Note that files contained in a single <version>  subdirectory at the end of the directory path should represent all the available time-samples reported from the simulation; a time-series can be split across several files, but all the files must be found in the same subdirectory.
-This implies that <version> will not generally be the actual date that all files in the subdirectory were written or published (see also Directory structure template in [CMIP6 DRS](https://goo.gl/v1drZl)).
+Note that files contained in a single `version` subdirectory at the end of the directory path should represent all the available time-samples reported from the simulation; a time-series can be split across several files, but all the files must be found in the same subdirectory.
+This implies that `version` will not generally be the actual date that all files in the subdirectory were written or published (see also Directory structure template in [CMIP6 DRS](https://goo.gl/v1drZl)).
 
 Examples:
 

@@ -163,8 +163,12 @@ Changing ‘resolution’ from degrees, which are related only to the rotated co
 For example, "AFR-25" means the CORDEX-Africa domain with 25 km resolution in a projected coordinate system and 0.22° resolution in the rotated pole coordinate system.
 The resolution flag indicates the resolution of the atmospheric component of CORDEX models.
 All variables from a simulation must be provided with the same `domain_id`.
-The domain acronyms for the regular grids are the same as those for the corresponding model native grid with the letter 'i' appended to the resolution (e.g. "AFR-25i").
+
+For each model native grid, there is also a corresponding regular latitude-longitude grid.
+These grids have roughly the same resolution as the native grids used by the RCMs (50 km ↔ 1/2°, 25 km ↔ 1/4°, 12 km ↔ 1/8°) with grid cell boundaries (not centers) on integer degrees of latitude and longitude.
+The domain acronyms for the regular grids are the same as those for the corresponding model native grid with the letter 'i' appended to the resolution (e.g. "AFR-25i" is the 0.25° lat-lon grid for the CORDEX-Africa domain).
 Unlike model native grids, regular i-grids are always matching across models and model components.
+We recommend but do not require providing the most important variables for impacts on the regular grid in addition to the native grid.
 
 Data must  be provided for the CORDEX domain only, i.e. the relaxation zones must be removed before the data is delivered.
 Names of the CORDEX domains are provided in [CORDEX-CMIP6 domain id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json).

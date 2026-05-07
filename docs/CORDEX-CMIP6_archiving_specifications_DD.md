@@ -181,7 +181,8 @@ For a spherical earth this is done via the crs attribute earth_radius.
 If a model grid specifies an ellipsoid for the shape of the earth then see [CF-1.11 Appendix F](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#appendix-grid-mappings).
 
 The 2-dimensional geographic latitudes and longitudes of the model grid cells (lon and lat) must be also provided as auxiliary coordinates.
-Longitude coordinates must be strictly monotonically increasing and confined to the range -180 to 360; they must also have absolute values as small as possible given the first two constraints (e.g., store 170 E to 170 W as 170 to 190, but store 150 W to 130 W as -150 to -130, not 210 to 230). 
+Longitude coordinates must be strictly monotonically increasing, except for domains that include a pole or cross both the 0° and 180° meridians (e.g. ANT, ARC).
+Longitude coordinates must be confined to the range -180 to 360. Finally, they must also have absolute values as small as possible given the first two constraints (e.g., store 170 E to 170 W as 170 to 190, but store 150 W to 130 W as -150 to -130, not 210 to 230). 
 
 For models with native unstructured grids, it is up to the regional CORDEX communities to decide whether data must be remapped to one of the regular lat-lon domain grids (e.g., AFR-25i) or to the most common native RCM grid used for a specific CORDEX domain.
 

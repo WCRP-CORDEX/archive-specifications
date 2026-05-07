@@ -165,7 +165,7 @@ The resolution flag indicates the resolution of the atmospheric component of COR
 All variables from a simulation must be provided with the same `domain_id`.
 
 For each model native grid, there is also a corresponding regular latitude-longitude grid.
-These grids have roughly the same resolution as the native grids used by the RCMs (50 km ↔ 1/2°, 25 km ↔ 1/4°, 12 km ↔ 1/8°) with grid cell boundaries (not centers) on integer degrees of latitude and longitude.
+These grids have roughly the same resolution as the native grids used by the RCMs (50 km &harr; 1/2&deg;, 25 km &harr; 1/4&deg;, 12 km &harr; 1/8&deg;) with grid cell boundaries (not centers) on integer degrees of latitude and longitude.
 The domain acronyms for the regular grids are the same as those for the corresponding model native grid with the letter 'i' appended to the resolution (e.g. "AFR-25i" is the 0.25° lat-lon grid for the CORDEX-Africa domain).
 Unlike model native grids, regular i-grids are always matching across models and model components.
 We recommend but do not require providing the most important variables for impacts on the regular grid in addition to the native grid.

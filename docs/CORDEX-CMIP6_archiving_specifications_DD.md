@@ -94,7 +94,7 @@ Table 1 notes:
    grid = "Lambert conic conformal with 25 km grid spacing"
    grid = "Rotated-pole latitude-longitude with 0.22 degree grid spacing"
    grid = "Rotated-pole latitude-longitude with 0.11 degree grid spacing, interpolated by 2nd order conservative remapping from the original unstructured icosahedral ICON grid R13B05 (~12.1 km)"
-   grid = "NEMO ORCA tripolar grid with a 1/12 degree (6-8km) grid spacing; Mediterranean Sea only"
+   grid = "NEMO ORCA tripolar grid with a 1/12 degree (6-8km) grid spacing (no grid_mapping); Mediterranean Sea only"
 ```
 
  2. The `version_realization_info` global attribute provides information on how  new reruns (e.g. v2, v3, etc.) and/or realizations (e.g. r2, r3, etc.) are generated; recommended if the `version_realization` is not v1-r1.
@@ -188,6 +188,8 @@ For a spherical earth this is done via the crs attribute earth_radius.
 If a model grid specifies an ellipsoid for the shape of the earth then see [CF-1.11 Appendix F](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#appendix-grid-mappings).
 
 For model components with non-projected coordinate systems, the `grid_mapping` variable and attribute can be skipped, and a text description of the grid must be provided in the `grid` attribute (see examples in Table 1, [note 1](#grid-note) above).
+The specific text "(no grid_mapping)" should be added to the `grid` description, as in the example above, in order to let automatic quality checkers know about this exception.
+The 1-dimensional coordinate variables may also be skipped in these non-projected coordinate systems.
 
 The 2-dimensional geographic latitudes and longitudes of the model grid cells (lon and lat) must be also provided as auxiliary coordinates.
 Longitude coordinates must be strictly monotonically increasing and confined to the range -180 to 360; they must also have absolute values as small as possible given the first two constraints (e.g., store 170 E to 170 W as 170 to 190, but store 150 W to 130 W as -150 to -130, not 210 to 230). 

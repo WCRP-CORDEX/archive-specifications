@@ -93,12 +93,13 @@ In this case, the first entry in the list will be the only value used in the DRS
 
 Table 1 notes:
 
- 1. The "grid" global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid (see note 10 in [CMIP6 DRS](https://goo.gl/v1drZl)).  Here are some examples:
+
+ 1. <span id="grid-note"></span>The "grid" global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid (see note 10 in [CMIP6 DRS](https://goo.gl/v1drZl)).  Here are some examples:
 ```python
    grid = "Lambert conic conformal with 25 km grid spacing"
    grid = "Rotated-pole latitude-longitude with 0.22 degree grid spacing"
-   grid = "Rotated-pole latitude-longitude with 0.11 degree grid spacing, interpolated by 2nd order conservative remapping    from the original unstructured icosahedral ICON grid R13B05 (~12.1 km)"
-   grid = "Rotated-pole latitude-longitude with 0.22 degree grid spacing; ocean grid Mediterranean Sea only, 9-12 km with a tilted and stretched grid at the Gibraltar Strait"
+   grid = "Rotated-pole latitude-longitude with 0.11 degree grid spacing, interpolated by 2nd order conservative remapping from the original unstructured icosahedral ICON grid R13B05 (~12.1 km)"
+   grid = "NEMO ORCA tripolar grid with a 1/12 degree (6-8km) grid spacing (no grid_mapping); Mediterranean Sea only"
 ```
 
  2. The `version_realization_info` global attribute provides information on how  new reruns (e.g. v2, v3, etc.) and/or realizations (e.g. r2, r3, etc.) are generated; recommended if the `version_realization` is not v1-r1.
@@ -159,19 +160,25 @@ The CORDEX domains are defined in the [CORDEX domain tables](https://github.com/
 A domain must lie fully inside the RCM interior computational domain, i.e. in the area left once the relaxation zone is excluded.
 It is strongly recommended that RCMs using the rotated-pole coordinate system exactly follow the CORDEX grid definition provided.
 The rotated-pole coordinate system is always defined in terms of rotation of the North Pole in accordance with [CF-1.11](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#grid-mappings-and-projections).
-All variables from a simulation must be provided on the same grid (i.e., variables on staggered grids must be regridded to the standard grid).
+All variables from a model component must be provided on the same grid (i.e., variables on staggered grids must be regridded to the standard grid).
 Zonal and meridional winds must be provided as real north- and eastward winds if the RCM uses a coordinate system/projection that does not coincide with real north- and eastward directions (e.g. the rotated pole, Lambert Conformal, etc.).
 
-The domain acronym is ‘domain name’-‘resolution’, where ‘resolution’ is the nearest grid spacing in km of the 3 resolutions used in CORDEX-CMIP5 and CORDEX-CMIP6 (50, 25 and 12 km).
+The domain acronym (`domain_id`) is ‘domain name’-‘resolution’, where ‘resolution’ is the nearest grid spacing in km of the 3 resolutions used in CORDEX-CMIP5 and CORDEX-CMIP6 (50, 25 and 12 km).
 Changing ‘resolution’ from degrees, which are related only to the rotated coordinate system (CORDEX-CMIP5), to the more common kilometres allows us to unify the terminology used in CORDEX, making it easily understandable by all users.
 For example, "AFR-25" means the CORDEX-Africa domain with 25 km resolution in a projected coordinate system and 0.22° resolution in the rotated pole coordinate system.
 The resolution flag indicates the resolution of the atmospheric component of CORDEX models.
-The domain acronyms for the regular grids are the same as those for the corresponding model grid with the letter 'i' appended to the resolution (e.g. "AFR-25i").
+All variables from a simulation must be provided with the same `domain_id`.
+
+For each model native grid, there is also a corresponding regular latitude-longitude grid.
+These grids have roughly the same resolution as the native grids used by the RCMs (50 km &harr; 1/2&deg;, 25 km &harr; 1/4&deg;, 12 km &harr; 1/8&deg;) with grid cell boundaries (not centers) on integer degrees of latitude and longitude.
+The domain acronyms for the regular grids are the same as those for the corresponding model native grid with the letter 'i' appended to the resolution (e.g. "AFR-25i" is the 0.25° lat-lon grid for the CORDEX-Africa domain).
+Unlike model native grids, regular i-grids are always matching across models and model components.
+We recommend but do not require providing the most important variables for impacts on the regular grid in addition to the native grid.
 
 Data must  be provided for the CORDEX domain only, i.e. the relaxation zones must be removed before the data is delivered.
 Names of the CORDEX domains are provided in [CORDEX-CMIP6 domain id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json).
 
-Data files must contain a full description of native coordinate systems used by RCMs:
+Data files for models with native projected coordinate systems must contain a full description:
 
  * the 1-dimensional coordinate variables (e.g. rlon and rlat for the rotated pole coordinate system or x and y for the Lambert Conformal Conic (LCC) projection),
 
@@ -184,6 +191,10 @@ The grid mapping variable crs is of arbitrary type (e.g. char or int) since it c
 The shape and size of the Earth used for the model grid must be specified.
 For a spherical earth this is done via the crs attribute earth_radius.
 If a model grid specifies an ellipsoid for the shape of the earth then see [CF-1.11 Appendix F](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#appendix-grid-mappings).
+
+For model components with non-projected coordinate systems, the `grid_mapping` variable and attribute can be skipped, and a text description of the grid must be provided in the `grid` attribute (see examples in Table 1, [note 1](#grid-note) above).
+The specific text "(no grid_mapping)" should be added to the `grid` description, as in the example above, in order to let automatic quality checkers know about this exception.
+The 1-dimensional coordinate variables may also be skipped in these non-projected coordinate systems.
 
 The 2-dimensional geographic latitudes and longitudes of the model grid cells (lon and lat) must be also provided as auxiliary coordinates.
 Longitude coordinates must be strictly monotonically increasing, except for domains that include a pole or cross both the 0° and 180° meridians (e.g. ANT, ARC).

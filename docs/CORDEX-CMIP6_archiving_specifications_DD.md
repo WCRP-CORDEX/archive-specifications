@@ -3,12 +3,9 @@ pdf: true
 ---
 # CORDEX-CMIP6 Archiving Specifications for Dynamical Downscaling
 
-!!! warning "Under Development"
-    This is a test markdown implementation of the CORDEX-CMIP6 archiving specifications. Until fully tested, please, refer to the official document in Zenodo ([https://doi.org/10.5281/zenodo.15047096](https://doi.org/10.5281/zenodo.15047096)).
+21st May 2026
 
-21st March 2025
-
-DOI: [10.5281/zenodo.15047096](https://doi.org/10.5281/zenodo.15047096)
+DOI: [10.5281/zenodo.20274448](https://doi.org/10.5281/zenodo.20274448)
 
 Grigory Nikulin<sup>1</sup>, Lars Buntemeyer<sup>2</sup>, Jesús Fernández<sup>3</sup>, Seth McGinnis<sup>4</sup> and Jason P. Evans<sup>5</sup>
 
@@ -279,7 +276,7 @@ The modelling groups will not be able to publish their CORDEX-CMIP6 simulations 
 
 ## 12. User support
 
-In case of any questions or doubts please create an issue in [https://github.com/WCRP-CORDEX/cordex-cmip6-cv](https://github.com/WCRP-CORDEX/cordex-cmip6-cv). 
+In case of any questions or doubts please create an issue in [https://github.com/WCRP-CORDEX/archive-specifications](https://github.com/WCRP-CORDEX/archive-specifications). 
 
 ## Acknowledgments
 
@@ -341,12 +338,12 @@ int crs ;
 
 double x(x) ;
     x:standard_name = "projection_x_coordinate" ;
-    x:long_name = "X Coordinate Of Projection" ;
+    x:long_name = "x coordinate of projection" ;
     x:units = "m" ;
 
 double y(y) ;
     y:standard_name = "projection_y_coordinate" ;
-    y:long_name = "Y Coordinate Of Projection" ;
+    y:long_name = "y coordinate of projection" ;
     y:units = "m" ;
 
 double lon(y, x) ;
@@ -492,8 +489,9 @@ data:
 
 | Version | Date | Comment |
 | :---: | :---- | :---- |
-| v2 | 2025-03-21 | <ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) <li>`mip_era` is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) <li>Fixed example for `creation_date` global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) <li>New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) <li>Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) <li>Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17))</ul> |
-| v1 | 2024-04-10 | Initial release on April, 10th, 2024. |
+| [v3](https://doi.org/10.5281/zenodo.20274448) | 2026-05-21 | <ul><li>First version official in mkdocs at https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD.<li>Update user support target repository.<li>Fix inconsistency in `driving_experiment` attribute for the evaluation experiment ([#26](https://github.com/WCRP-CORDEX/archive-specifications/issues/26)).<li>Fix case in `long_name` of LCC projected coordinates ([#27](https://github.com/WCRP-CORDEX/archive-specifications/issues/27)).<li>Skip mandatory nature of `grid_mapping` in non-projected grids ([#29](https://github.com/WCRP-CORDEX/archive-specifications/issues/29)).<li>Allow for different grids for different model components of the same simulation ([#40](https://github.com/WCRP-CORDEX/archive-specifications/issues/40)).<li>Allow for multiple `activity_id`s ([#45](https://github.com/WCRP-CORDEX/archive-specifications/issues/45)).</ul> |
+| [v2](https://doi.org/10.5281/zenodo.15047096) | 2025-03-21 | <ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) <li>`mip_era` is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) <li>Fixed example for `creation_date` global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) <li>New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) <li>Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) <li>Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17))</ul> |
+| [v1](https://doi.org/10.5281/zenodo.10961069) | 2024-04-10 | Initial release on April, 10th, 2024. |
 
 [^1]:  The grid mapping variable is also allowed to be called after the CF standard grid_mapping_name used. This is the default hardcoded behaviour in the CMOR library as of version 3.9.0 (2024-08-28). Of course, the main variable corresponding grid_mapping attribute should then match this grid mapping variable name.
 

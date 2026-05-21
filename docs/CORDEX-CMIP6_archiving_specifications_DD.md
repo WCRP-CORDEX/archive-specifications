@@ -151,6 +151,12 @@ The entire time series of a target variable is to be distributed over several fi
 All output fields must be single precision (type NC_FLOAT), while all coordinate variables (time and space) must be double precision (type NC_DOUBLE).
 All missing data must be assigned the single precision floating point value of 1.e20.
 
+File compliance to these archive specifications can and should be checked by means of the [WCRP Compliance Checker Plugins](https://github.com/ESGF/cc-plugin-wcrp) `wcrp_cordex_cmip6` and `cf:1.11`.
+Data files rising high severity errors in these checks will not be published on ESGF.
+
+It is strongly recommend to "repack" all files as a last postprocessing step, in order to have a cloud-optimized internal structure.
+The [ncrepack-cordex](https://github.com/WCRP-CORDEX/ncrepack-cordex) tool is provided to rearrange the internal metadata and chunking pattern.
+
 ## 6. CORDEX domains and horizontal coordinates
 
 The CORDEX domains are defined in the [CORDEX domain tables](https://github.com/WCRP-CORDEX/domain-tables).
@@ -489,7 +495,7 @@ data:
 
 | Version | Date | Comment |
 | :---: | :---- | :---- |
-| [v3](https://doi.org/10.5281/zenodo.20274448) | 2026-05-21 | <ul><li>First version official in mkdocs at https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD.<li>Update user support target repository.<li>Fix inconsistency in `driving_experiment` attribute for the evaluation experiment ([#26](https://github.com/WCRP-CORDEX/archive-specifications/issues/26)).<li>Fix case in `long_name` of LCC projected coordinates ([#27](https://github.com/WCRP-CORDEX/archive-specifications/issues/27)).<li>Skip mandatory nature of `grid_mapping` in non-projected grids ([#29](https://github.com/WCRP-CORDEX/archive-specifications/issues/29)).<li>Allow for different grids for different model components of the same simulation ([#40](https://github.com/WCRP-CORDEX/archive-specifications/issues/40)).<li>Allow for multiple `activity_id`s ([#45](https://github.com/WCRP-CORDEX/archive-specifications/issues/45)).</ul> |
+| [v3](https://doi.org/10.5281/zenodo.20274448) | 2026-05-21 | <ul><li>First version official in mkdocs at https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD.<li>Update user support target repository.<li>Fix inconsistency in `driving_experiment` attribute for the evaluation experiment ([#26](https://github.com/WCRP-CORDEX/archive-specifications/issues/26)).<li>Fix case in `long_name` of LCC projected coordinates ([#27](https://github.com/WCRP-CORDEX/archive-specifications/issues/27)).<li>Skip mandatory nature of `grid_mapping` in non-projected grids ([#29](https://github.com/WCRP-CORDEX/archive-specifications/issues/29)).<li>Add quality checker info and repacking recommendation ([#38](https://github.com/WCRP-CORDEX/archive-specifications/issues/38)).<li>Allow for different grids for different model components of the same simulation ([#40](https://github.com/WCRP-CORDEX/archive-specifications/issues/40)).<li>Allow for multiple `activity_id`s ([#45](https://github.com/WCRP-CORDEX/archive-specifications/issues/45)).</ul> |
 | [v2](https://doi.org/10.5281/zenodo.15047096) | 2025-03-21 | <ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) <li>`mip_era` is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) <li>Fixed example for `creation_date` global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) <li>New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) <li>Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) <li>Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17))</ul> |
 | [v1](https://doi.org/10.5281/zenodo.10961069) | 2024-04-10 | Initial release on April, 10th, 2024. |
 

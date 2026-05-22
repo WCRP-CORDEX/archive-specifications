@@ -2,7 +2,7 @@
 @page {
   size: A4 portrait;
   /* Reserve extra top space so the header image does not overlap content. */
-  margin: 3.20cm 1.20cm 1.20cm 1.20cm;
+  margin: 3.50cm 1.20cm 1.20cm 1.20cm;
 }
 
 /* The header image element is injected onto each rendered PDF page. */

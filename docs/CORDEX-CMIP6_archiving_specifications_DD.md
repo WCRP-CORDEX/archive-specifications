@@ -3,7 +3,7 @@ pdf: true
 ---
 # CORDEX-CMIP6 Archiving Specifications for Dynamical Downscaling
 
-21st May 2026
+25th May 2026
 
 DOI: [10.5281/zenodo.20274448](https://doi.org/10.5281/zenodo.20274448)
 
@@ -209,7 +209,7 @@ For models with native unstructured grids, it is up to the regional CORDEX commu
 
 The units of the time coordinate is `days since 1950-01-01`[^2] for all files.
 The earlier reference date `days since 1850-01-01` is also allowed if a RCM group downscales a longer period that includes the pre-1950 era.
-All time dependent variables must have an attribute `cell_methods: time` with values provided in the [CORDEX-CMIP6 CMOR tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables).
+All time dependent variables must have an attribute `cell_methods` specifying the time aggregation, as provided in the [CORDEX-CMIP6 CMOR tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables).
 
 The time value of the instantaneous data is [0Z, 6Z, 12Z, 18Z], [0Z, 3Z, 6Z, 9Z, 12Z, 15Z, 18Z, 21Z], and [0Z, 1Z, 2Z, 3Z, ..., 20Z, 21Z, 22Z, 23Z]  of each day for the 6-, 3-, and 1-hourly data respectively.
 
@@ -495,7 +495,7 @@ data:
 
 | Version | Date | Comment |
 | :---: | :---- | :---- |
-| [v3](https://doi.org/10.5281/zenodo.20274448) | 2026-05-21 | <ul><li>First version official in mkdocs at https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD.<li>Update user support target repository.<li>Fix inconsistency in `driving_experiment` attribute for the evaluation experiment ([#26](https://github.com/WCRP-CORDEX/archive-specifications/issues/26)).<li>Fix case in `long_name` of LCC projected coordinates ([#27](https://github.com/WCRP-CORDEX/archive-specifications/issues/27)).<li>Skip mandatory nature of `grid_mapping` in non-projected grids ([#29](https://github.com/WCRP-CORDEX/archive-specifications/issues/29)).<li>Add quality checker info and repacking recommendation ([#38](https://github.com/WCRP-CORDEX/archive-specifications/issues/38)).<li>Allow for different grids for different model components of the same simulation ([#40](https://github.com/WCRP-CORDEX/archive-specifications/issues/40)).<li>Allow for multiple `activity_id`s ([#45](https://github.com/WCRP-CORDEX/archive-specifications/issues/45)).</ul> |
+| [v3](https://doi.org/10.5281/zenodo.20274448) | 2026-05-25 | <ul><li>First version official in mkdocs at https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD.<li>Update user support target repository.<li>Fix inconsistency in `driving_experiment` attribute for the evaluation experiment ([#26](https://github.com/WCRP-CORDEX/archive-specifications/issues/26)).<li>Fix case in `long_name` of LCC projected coordinates ([#27](https://github.com/WCRP-CORDEX/archive-specifications/issues/27)).<li>Skip mandatory nature of `grid_mapping` in non-projected grids ([#29](https://github.com/WCRP-CORDEX/archive-specifications/issues/29)).<li>Add quality checker info and repacking recommendation ([#38](https://github.com/WCRP-CORDEX/archive-specifications/issues/38)).<li>Allow for different grids for different model components of the same simulation ([#40](https://github.com/WCRP-CORDEX/archive-specifications/issues/40)).<li>Allow for multiple `activity_id`s ([#45](https://github.com/WCRP-CORDEX/archive-specifications/issues/45)).<li>Some smaller updates and rewording([#30](https://github.com/WCRP-CORDEX/archive-specifications/issues/30) [#49](https://github.com/WCRP-CORDEX/archive-specifications/issues/49)).</ul> |
 | [v2](https://doi.org/10.5281/zenodo.15047096) | 2025-03-21 | <ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) <li>`mip_era` is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) <li>Fixed example for `creation_date` global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) <li>New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) <li>Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) <li>Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17))</ul> |
 | [v1](https://doi.org/10.5281/zenodo.10961069) | 2024-04-10 | Initial release on April, 10th, 2024. |
 

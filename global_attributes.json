@@ -121,7 +121,7 @@
   },
   "institution": {
     "name": "institution",
-    "description": "full name of the institution that is responsible for CORDEX simulations",
+    "description": "full name of the institution that is responsible for CORDEX simulations, as registered in the CV",
     "examples": "(see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json))",
     "cordex_cmip5_attribute": "institution",
     "form": "CV to register",
@@ -177,7 +177,7 @@
   },
   "source": {
     "name": "source",
-    "description": "full model name/version",
+    "description": "full model name/version, matching the \"label_extended\" registered in the CV",
     "examples": "see \"label_extended\" in [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json)",
     "cordex_cmip5_attribute": "-",
     "form": "CV to register",

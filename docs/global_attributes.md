@@ -15,14 +15,14 @@
 | frequency | sampling frequency **Used in faceted searches, part of DRS.** | day, mon, 6hr, 3hr, 1hr, fx  (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_frequency.json)) | frequency | CV | always |
 | grid | provides information about the horizontal grid and regridding procedure | see note 1 | - | free form | always |
 | history | a timestamped trail for modifications to the original data, as suggested by the CF conventions | - | history | free form | never |
-| institution | full name of the institution that is responsible for CORDEX simulations | (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json)) | institution | CV to register | always |
+| institution | full name of the institution that is responsible for CORDEX simulations, as registered in the CV | (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json)) | institution | CV to register | always |
 | institution_id | an identifier of the institution that is responsible for CORDEX simulations **Used in faceted searches, part of DRS.** | (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_institution_id.json)) | institute_id | CV to register | always |
 | license | provides information about the license | "[https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use](https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use)" is the only option | - | CV | always |
 | mip_era | determines what cycle of CMIP defines experiment and data specifications | "CMIP6" is the only option. | - | CV | always |
 | product | product type **Used in faceted searches.** | "model-output" is the only option | product | CV | always |
 | project_id | project identifier  **Used in faceted searches, part of DRS**. | "CORDEX-CMIP6" is the only option. | project_id | CV | always |
 | references | published or web-based references that describe the data, model or methods used | - | references | free form | never |
-| source | full model name/version | see "label_extended" in [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json) | - | CV to register | always |
+| source | full model name/version, matching the "label_extended" registered in the CV | see "label_extended" in [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json) | - | CV to register | always |
 | source_id | model identifier (acronym) **Used in faceted searches, part of DRS**. | see "source_id" in [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_id.json) | part of model_id | CV to register | always |
 | source_type | model configuration **Used in faceted searches** | "ARCM", "AORCM", "AGCM", "AOGCM" (see [reference CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_source_type.json)) | - | CV | always |
 | tracking_id | unique file identifier | see note 3 | tracking_id | structured form | always |

@@ -156,6 +156,7 @@ Data files rising high severity errors in these checks will not be published on 
 
 It is strongly recommend to "repack" all files as a last postprocessing step, in order to have a cloud-optimized internal structure.
 The [ncrepack-cordex](https://github.com/WCRP-CORDEX/ncrepack-cordex) tool is provided to rearrange the internal metadata and chunking pattern.
+CORDEX data not properly repacked will limit the ability of ESGF data servers to provide remote access to them.
 
 ## 6. CORDEX domains and horizontal coordinates
 

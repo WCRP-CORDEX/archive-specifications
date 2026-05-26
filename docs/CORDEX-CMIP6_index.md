@@ -26,11 +26,5 @@ The [Archiving Specifications for Dynamical Downscaling](CORDEX-CMIP6_archiving_
 - **Latest Version**: [DOI: 10.5281/zenodo.10961068](https://doi.org/10.5281/zenodo.10961068)
 - **Global Attributes Reference**: See the [Global Attributes](global_attributes.md) page for a complete reference table
 - **Issues**: Report issues at [GitHub Issues](https://github.com/WCRP-CORDEX/archive-specifications/issues)
+- **Version history**: Check the [version history](https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD/#14-version-history) in the latest document.
 - **CVs**: Controlled vocabularies are maintained at [CORDEX-CMIP6 CV repository](https://github.com/WCRP-CORDEX/cordex-cmip6-cv)
-
-## Version History
-
-| Version | Date | Comment |
-|---------|------|---------|
-| v2 | 2025-03-21 | Change of project_id (CORDEX to CORDEX-CMIP6); mip_era excluded from ESGF directory structure; Fixed creation_date example; New scalar coordinate variables example; Specify time coordinate origin; Allow grid mapping variable to match grid_mapping_name |
-| v1 | 2024-04-10 | Initial release |

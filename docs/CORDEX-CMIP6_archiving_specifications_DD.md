@@ -1,14 +1,12 @@
 ---
 pdf: true
+
 ---
 # CORDEX-CMIP6 Archiving Specifications for Dynamical Downscaling
 
-!!! warning "Under Development"
-    This is a test markdown implementation of the CORDEX-CMIP6 archiving specifications. Until fully tested, please, refer to the official document in Zenodo ([https://doi.org/10.5281/zenodo.15047096](https://doi.org/10.5281/zenodo.15047096)).
+26th May 2026
 
-21st March 2025
-
-DOI: [10.5281/zenodo.15047096](https://doi.org/10.5281/zenodo.15047096)
+DOI: [10.5281/zenodo.20274448](https://doi.org/10.5281/zenodo.20274448)
 
 Grigory Nikulin<sup>1</sup>, Lars Buntemeyer<sup>2</sup>, Jesús Fernández<sup>3</sup>, Seth McGinnis<sup>4</sup> and Jason P. Evans<sup>5</sup>
 
@@ -63,9 +61,9 @@ RCM simulations with spectral nudging must use the "SN" suffix in source_id (e.g
 This DRS element has the form "vN-rM".
 "N" in the version part "vN" is 1 for the first release of dataset (v1) and sequential numbers (2, 3, 4, etc.) for any rerun or re-processing of the dataset (v2, v3, v4, etc.).
 The later version always supersedes the earlier version.
-"M'' in the realization part "rM" is sequential numbers (1, 2, 3 etc.) that reflect multiple RCM simulations with perturbed initial conditions (r1, r2, r3, etc.) driven by the same GCM and the same GCM member.
+"M" in the realization part "rM" is sequential numbers (1, 2, 3 etc.) that reflect multiple RCM simulations with perturbed initial conditions (r1, r2, r3, etc.) driven by the same GCM and the same GCM member.
 The version and realization parts are separated by a dash "-" (e.g. v1-r1, v1-r2, v1-r3).
-The version part of this DRS element should not be confused with the ESGF-related DRS element version that has the form "vYYYYMMDD '' and is only included in the ESGF directory structure (see [4. ESGF Directory Structure](#4-esgf-directory-structure)).
+The version part of this DRS element should not be confused with the ESGF-related DRS element version that has the form "vYYYYMMDD" and is only included in the ESGF directory structure (see [4. ESGF Directory Structure](#4-esgf-directory-structure)).
 
 `frequency` (CV) is the output frequency indicator: 1hr - 1 hourly, 3hr - 3 hourly, 6hr - 6 hourly, day - daily, mon - monthly, and fx - invariant fields; see the [CORDEX-CMIP6 frequency CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_frequency.json).
 
@@ -77,6 +75,11 @@ All time stamps refer to UTC.
 Constant fields (`frequency=fx`) do not have the `StartTime`-`EndTime` element in their file names.
 
 `activity_id` (CV) - an identifier of different CORDEX activities such as dynamical downscaling (DD) and empirical-statistical downscaling (ESD), see the [CORDEX-CMIP6 activity id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_activity_id.json).
+Regarding the activity described in this document (dynamical downscaling on standard CORDEX domains at continental scale; CORDEX-Domain), "DD" is the only option.
+However, other values are possible for other activities under the CORDEX-CMIP6 project, such as Flagship Pilot Studies (FPS), which will provide their own archiving specifications.
+`activity_id` can also be a space-separated list of activities if a simulation can belong to several of them.
+This is useful for faceted searches.
+In this case, the first entry in the list will be the only value used in the DRS path (see [Section 4](#4-esgf-directory-structure)).
 
 `project_id` (CV) - project identifier ("CORDEX-CMIP6" is the only option)
 
@@ -88,12 +91,13 @@ Constant fields (`frequency=fx`) do not have the `StartTime`-`EndTime` element i
 
 Table 1 notes:
 
- 1. The "grid" global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid (see note 10 in [CMIP6 DRS](https://goo.gl/v1drZl)).  Here are some examples:
+
+ 1. <span id="grid-note"></span>The "grid" global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid (see note 10 in [CMIP6 DRS](https://goo.gl/v1drZl)).  Here are some examples:
 ```python
    grid = "Lambert conic conformal with 25 km grid spacing"
    grid = "Rotated-pole latitude-longitude with 0.22 degree grid spacing"
-   grid = "Rotated-pole latitude-longitude with 0.11 degree grid spacing, interpolated by 2nd order conservative remapping    from the original unstructured icosahedral ICON grid R13B05 (~12.1 km)"
-   grid = "Rotated-pole latitude-longitude with 0.22 degree grid spacing; ocean grid Mediterranean Sea only, 9-12 km with a tilted and stretched grid at the Gibraltar Strait"
+   grid = "Rotated-pole latitude-longitude with 0.11 degree grid spacing, interpolated by 2nd order conservative remapping from the original unstructured icosahedral ICON grid R13B05 (~12.1 km)"
+   grid = "NEMO ORCA tripolar grid with a 1/12 degree (6-8km) grid spacing (no grid_mapping); Mediterranean Sea only"
 ```
 
  2. The `version_realization_info` global attribute provides information on how  new reruns (e.g. v2, v3, etc.) and/or realizations (e.g. r2, r3, etc.) are generated; recommended if the `version_realization` is not v1-r1.
@@ -121,10 +125,10 @@ ii) the institution that is responsible for the driving CMIP6 simulation (drivin
 
 directory_structure=`<project_id>/<activity_id>/<domain_id>/<institution_id>/<driving_source_id>/<driving_experiment_id>/<driving_variant_label>/<source_id>/<version_realization>/<frequency>/<variable_id>/<version>/`
 
-The  <version> DRS element indicates an approximate date of model output files or publication on ESGF and has the form "vYYYYMMDD" (e.g., "v20231206").
+The `version` DRS element indicates an approximate date of model output files or publication on ESGF and has the form "vYYYYMMDD" (e.g., "v20231206").
  This is the only DRS element that is not stored as a global attribute.
-Note that files contained in a single <version>  subdirectory at the end of the directory path should represent all the available time-samples reported from the simulation; a time-series can be split across several files, but all the files must be found in the same subdirectory.
-This implies that <version> will not generally be the actual date that all files in the subdirectory were written or published (see also Directory structure template in [CMIP6 DRS](https://goo.gl/v1drZl)).
+Note that files contained in a single `version` subdirectory at the end of the directory path should represent all the available time-samples reported from the simulation; a time-series can be split across several files, but all the files must be found in the same subdirectory.
+This implies that `version` will not generally be the actual date that all files in the subdirectory were written or published (see also Directory structure template in [CMIP6 DRS](https://goo.gl/v1drZl)).
 
 Examples:
 
@@ -148,25 +152,38 @@ The entire time series of a target variable is to be distributed over several fi
 All output fields must be single precision (type NC_FLOAT), while all coordinate variables (time and space) must be double precision (type NC_DOUBLE).
 All missing data must be assigned the single precision floating point value of 1.e20.
 
+File compliance to these archive specifications can and should be checked by means of the [WCRP Compliance Checker Plugins](https://github.com/ESGF/cc-plugin-wcrp) `wcrp_cordex_cmip6` and `cf:1.11`.
+Data files rising high severity errors in these checks will not be published on ESGF.
+
+It is strongly recommend to "repack" all files as a last postprocessing step, in order to have a cloud-optimized internal structure.
+The [ncrepack-cordex](https://github.com/WCRP-CORDEX/ncrepack-cordex) tool is provided to rearrange the internal metadata and chunking pattern.
+CORDEX data not properly repacked will limit the ability of ESGF data servers to provide remote access to them.
+
 ## 6. CORDEX domains and horizontal coordinates
 
 The CORDEX domains are defined in the [CORDEX domain tables](https://github.com/WCRP-CORDEX/domain-tables).
 A domain must lie fully inside the RCM interior computational domain, i.e. in the area left once the relaxation zone is excluded.
 It is strongly recommended that RCMs using the rotated-pole coordinate system exactly follow the CORDEX grid definition provided.
 The rotated-pole coordinate system is always defined in terms of rotation of the North Pole in accordance with [CF-1.11](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#grid-mappings-and-projections).
-All variables from a simulation must be provided on the same grid (i.e., variables on staggered grids must be regridded to the standard grid).
+All variables from a model component must be provided on the same grid (i.e., variables on staggered grids must be regridded to the standard grid).
 Zonal and meridional winds must be provided as real north- and eastward winds if the RCM uses a coordinate system/projection that does not coincide with real north- and eastward directions (e.g. the rotated pole, Lambert Conformal, etc.).
 
-The domain acronym is ‘domain name’-‘resolution’, where ‘resolution’ is the nearest grid spacing in km of the 3 resolutions used in CORDEX-CMIP5 and CORDEX-CMIP6 (50, 25 and 12 km).
+The domain acronym (`domain_id`) is ‘domain name’-‘resolution’, where ‘resolution’ is the nearest grid spacing in km of the 3 resolutions used in CORDEX-CMIP5 and CORDEX-CMIP6 (50, 25 and 12 km).
 Changing ‘resolution’ from degrees, which are related only to the rotated coordinate system (CORDEX-CMIP5), to the more common kilometres allows us to unify the terminology used in CORDEX, making it easily understandable by all users.
 For example, "AFR-25" means the CORDEX-Africa domain with 25 km resolution in a projected coordinate system and 0.22° resolution in the rotated pole coordinate system.
 The resolution flag indicates the resolution of the atmospheric component of CORDEX models.
-The domain acronyms for the regular grids are the same as those for the corresponding model grid with the letter 'i' appended to the resolution (e.g. "AFR-25i").
+All variables from a simulation must be provided with the same `domain_id`.
+
+For each model native grid, there is also a corresponding regular latitude-longitude grid.
+These grids have roughly the same resolution as the native grids used by the RCMs (50 km &harr; 1/2&deg;, 25 km &harr; 1/4&deg;, 12 km &harr; 1/8&deg;) with grid cell boundaries (not centers) on integer degrees of latitude and longitude.
+The domain acronyms for the regular grids are the same as those for the corresponding model native grid with the letter 'i' appended to the resolution (e.g. "AFR-25i" is the 0.25° lat-lon grid for the CORDEX-Africa domain).
+Unlike model native grids, regular i-grids are always matching across models and model components.
+We recommend but do not require providing the most important variables for impacts on the regular grid in addition to the native grid.
 
 Data must  be provided for the CORDEX domain only, i.e. the relaxation zones must be removed before the data is delivered.
 Names of the CORDEX domains are provided in [CORDEX-CMIP6 domain id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json).
 
-Data files must contain a full description of native coordinate systems used by RCMs:
+Data files for models with native projected coordinate systems must contain a full description:
 
  * the 1-dimensional coordinate variables (e.g. rlon and rlat for the rotated pole coordinate system or x and y for the Lambert Conformal Conic (LCC) projection),
 
@@ -180,8 +197,13 @@ The shape and size of the Earth used for the model grid must be specified.
 For a spherical earth this is done via the crs attribute earth_radius.
 If a model grid specifies an ellipsoid for the shape of the earth then see [CF-1.11 Appendix F](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#appendix-grid-mappings).
 
+For model components with non-projected coordinate systems, the `grid_mapping` variable and attribute can be skipped, and a text description of the grid must be provided in the `grid` attribute (see examples in Table 1, [note 1](#grid-note) above).
+The specific text "(no grid_mapping)" should be added to the `grid` description, as in the example above, in order to let automatic quality checkers know about this exception.
+The 1-dimensional coordinate variables may also be skipped in these non-projected coordinate systems.
+
 The 2-dimensional geographic latitudes and longitudes of the model grid cells (lon and lat) must be also provided as auxiliary coordinates.
-Longitude coordinates must be strictly monotonically increasing and confined to the range -180 to 360; they must also have absolute values as small as possible given the first two constraints (e.g., store 170 E to 170 W as 170 to 190, but store 150 W to 130 W as -150 to -130, not 210 to 230). 
+Longitude coordinates must be strictly monotonically increasing, except for domains that include a pole or cross both the 0° and 180° meridians (e.g. ANT, ARC).
+Longitude coordinates must also be confined to the range -180 to 360 and have absolute values as small as possible given the other two constraints (e.g., store 170 E to 170 W as 170 to 190, but store 150 W to 130 W as -150 to -130, not 210 to 230). 
 
 For models with native unstructured grids, it is up to the regional CORDEX communities to decide whether data must be remapped to one of the regular lat-lon domain grids (e.g., AFR-25i) or to the most common native RCM grid used for a specific CORDEX domain.
 
@@ -189,7 +211,7 @@ For models with native unstructured grids, it is up to the regional CORDEX commu
 
 The units of the time coordinate is `days since 1950-01-01`[^2] for all files.
 The earlier reference date `days since 1850-01-01` is also allowed if a RCM group downscales a longer period that includes the pre-1950 era.
-All time dependent variables must have an attribute `cell_methods: time` with values provided in the [CORDEX-CMIP6 CMOR tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables).
+All time dependent variables must have an attribute `cell_methods` specifying the time aggregation, as provided in the [CORDEX-CMIP6 CMOR tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables).
 
 The time value of the instantaneous data is [0Z, 6Z, 12Z, 18Z], [0Z, 3Z, 6Z, 9Z, 12Z, 15Z, 18Z, 21Z], and [0Z, 1Z, 2Z, 3Z, ..., 20Z, 21Z, 22Z, 23Z]  of each day for the 6-, 3-, and 1-hourly data respectively.
 
@@ -262,7 +284,7 @@ The modelling groups will not be able to publish their CORDEX-CMIP6 simulations 
 
 ## 12. User support
 
-In case of any questions or doubts please create an issue in [https://github.com/WCRP-CORDEX/cordex-cmip6-cv](https://github.com/WCRP-CORDEX/cordex-cmip6-cv). 
+In case of any questions or doubts please create an issue in [https://github.com/WCRP-CORDEX/archive-specifications](https://github.com/WCRP-CORDEX/archive-specifications). 
 
 ## Acknowledgments
 
@@ -324,12 +346,12 @@ int crs ;
 
 double x(x) ;
     x:standard_name = "projection_x_coordinate" ;
-    x:long_name = "X Coordinate Of Projection" ;
+    x:long_name = "x coordinate of projection" ;
     x:units = "m" ;
 
 double y(y) ;
     y:standard_name = "projection_y_coordinate" ;
-    y:long_name = "Y Coordinate Of Projection" ;
+    y:long_name = "y coordinate of projection" ;
     y:units = "m" ;
 
 double lon(y, x) ;
@@ -446,7 +468,7 @@ data:
   :Conventions = "CF-1.11" ;
   :activity_id = "DD" ;
   :comment = "optional" ;
-  :contact = "[cordex-data@iircm.org](mailto:cordex-data@iircm.org)" ;
+  :contact = "cordex-data@iircm.org" ;
   :creation_date = "2023-11-19T18:01:15Z" ;	
   :domain = "Africa" ;
   :domain_id = "AFR-25" ;
@@ -459,7 +481,7 @@ data:
   :grid = "Lambert conic conformal with 25 km grid spacing"
   :institution = "Interdisciplinary Institute of Regional Climate Modeling" ;
   :institution_id = "IIRCM" ;
-  :license = "[https://cordex.org/data-access/cordex-cmip6-data/  cordex-cmip6-terms-of-use](https://cordex.org/data-access/cordex-cmip6-data/  cordex-cmip6-terms-of-use)" ;
+  :license = "https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use" ;
   :mip_era = "CMIP6" ;
   :product = "model-output" ;
   :project_id = "CORDEX-CMIP6" ;
@@ -475,8 +497,9 @@ data:
 
 | Version | Date | Comment |
 | :---: | :---- | :---- |
-| v2 | 2025-03-21 | <ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) <li>`mip_era` is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) <li>Fixed example for `creation_date` global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) <li>New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) <li>Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) <li>Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17))</ul> |
-| v1 | 2024-04-10 | Initial release on April, 10th, 2024. |
+| [v3](https://doi.org/10.5281/zenodo.20274448) | 2026-05-26 | <ul><li>First version official in mkdocs at https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD.<li>Update user support target repository.<li>Fix inconsistency in `driving_experiment` attribute for the evaluation experiment ([#26](https://github.com/WCRP-CORDEX/archive-specifications/issues/26)).<li>Fix case in `long_name` of LCC projected coordinates ([#27](https://github.com/WCRP-CORDEX/archive-specifications/issues/27)).<li>Skip mandatory nature of `grid_mapping` in non-projected grids ([#29](https://github.com/WCRP-CORDEX/archive-specifications/issues/29)).<li>Add quality checker info and repacking recommendation ([#38](https://github.com/WCRP-CORDEX/archive-specifications/issues/38)).<li>Allow for different grids for different model components of the same simulation ([#40](https://github.com/WCRP-CORDEX/archive-specifications/issues/40)).<li>Allow for multiple `activity_id`s ([#45](https://github.com/WCRP-CORDEX/archive-specifications/issues/45)).<li>Some smaller updates and rewording([#30](https://github.com/WCRP-CORDEX/archive-specifications/issues/30) [#49](https://github.com/WCRP-CORDEX/archive-specifications/issues/49)).</ul> |
+| [v2](https://doi.org/10.5281/zenodo.15047096) | 2025-03-21 | <ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) <li>`mip_era` is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) <li>Fixed example for `creation_date` global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) <li>New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) <li>Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) <li>Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17))</ul> |
+| [v1](https://doi.org/10.5281/zenodo.10961069) | 2024-04-10 | Initial release on April, 10th, 2024. |
 
 [^1]:  The grid mapping variable is also allowed to be called after the CF standard grid_mapping_name used. This is the default hardcoded behaviour in the CMOR library as of version 3.9.0 (2024-08-28). Of course, the main variable corresponding grid_mapping attribute should then match this grid mapping variable name.
 

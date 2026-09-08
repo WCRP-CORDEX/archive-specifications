@@ -29,34 +29,42 @@ No other character is allowed.
 The terms in brackets following the DRS element names in the list below indicate whether the values must be taken from a controlled vocabulary ('CV'), i.e. a fixed list of values, must be registered with CORDEX ('CV to register'), or must follow a predefined structure  ('structured form').
 Note that most elements must have the same value as the mandatory NetCDF global attribute. 
 
+<a id="def-variable-id"></a>
 `variable_id` (CV) is the short name of the variable.
 The name is taken from the [CORDEX-CMIP6 Variable List](https://cordex.org/experiment-guidelines/cordex-cmip6/data-request) or [CORDEX-CMIP6 CMOR tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables).
 
+<a id="def-domain-id"></a>
 `domain_id` (CV) is the name assigned to each of the CORDEX regions and includes a flag for resolution as listed in the [CORDEX-CMIP6 domain id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_domain_id.json).   
-   
+
+<a id="def-driving-source-id"></a>
 `driving_source_id` (CV) is an identifier of the driving data.
 The name consists of a model identifier.
 For reanalysis driven runs this is the name of the reanalysis data (ERA5).
 For runs driven by CMIP6 model data this is the associated CMIP6 source_id, which can be found in the [CORDEX-CMIP6 driving source id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_source_id.json).
 
+<a id="def-driving-experiment-id"></a>
 `driving_experiment_id` (CV) is either "evaluation" for the ERA5-driven experiment, the value of the CMIP6 experiment_id from the ScenarioMIP activity, or "historical" for the historical experiment from CMIP.
 The values for driving_experiment_id can be found in the [CORDEX-CMIP6 driving experiment id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_driving_experiment_id.json).
 
+<a id="def-driving-variant-label"></a>
 `driving_variant_label` (CV) identifies the ensemble member of the CMIP6 simulation that produced the forcing data.
 It must have the same value as the variant_label DRS element of the driving CMIP6 simulation (r<k>i<l>p<m>f<n>, see [CMIP6 DRS Appendix 1:  Global Attributes for Labeling Experiments](https://goo.gl/v1drZl)).
 For the evaluation experiment driven by ERA5 it is "r1i1p1f1".
 For all invariant fields (frequency = fx, e.g. orog or sftlf), `driving_variant_label` must be the same as variant_label of the driving CMIP6 simulation (e.g. r1i1p1f1, r2i1p1f1, etc.); r0i0p0f0 is not allowed.
 
+<a id="def-institution-id"></a>
 `institution_id` (CV to register) is an identifier for the institution that is responsible for generating and providing CORDEX simulations.
 All CORDEX institutions must be registered to publish their simulations on ESGF.
 See instructions on [how to register an institution](https://github.com/WCRP-CORDEX/cordex-cmip6-cv) and the current state of the [CORDEX-CMIP6 institution id CV](https://wcrp-cordex.github.io/cordex-cmip6-cv/CORDEX-CMIP6_institution_id.html).
 
+<a id="def-source-id"></a>
 `source_id` (CV to register) is an identifier (acronym) of the CORDEX RCM.
 All CORDEX RCMs must be registered to publish their simulations on ESGF.
 See instructions on [how to register a model](https://github.com/WCRP-CORDEX/cordex-cmip6-cv) and the current state of the [CORDEX-CMIP6 source id CV](https://wcrp-cordex.github.io/cordex-cmip6-cv/CORDEX-CMIP6_source_id.html).
 Different configurations of the same RCM such as different combinations of parameterization schemes or changes in parameters for existing schemes must be reflected in source_id by a free text suffix (e.g. RCM123, RCM123A for Africa or RCM123T for the tropics).
 RCM simulations with spectral nudging must use the "SN" suffix in source_id (e.g. RCM123-SN) while RCM simulations with Newtonian/dynamical nudging must use the "NN" suffix (e.g. RCM123-NN).
 
+<a id="def-version-realization"></a>
 `version_realization` (structured form) is a combination that identifies i) versions of CORDEX datasets (simulations) related to technical, configuration, or postprocessing errors and ii) realizations with different initial conditions for RCMs.
 This DRS element has the form "vN-rM".
 "N" in the version part "vN" is 1 for the first release of dataset (v1) and sequential numbers (2, 3, 4, etc.) for any rerun or re-processing of the dataset (v2, v3, v4, etc.).
@@ -65,8 +73,10 @@ The later version always supersedes the earlier version.
 The version and realization parts are separated by a dash "-" (e.g. v1-r1, v1-r2, v1-r3).
 The version part of this DRS element should not be confused with the ESGF-related DRS element version that has the form "vYYYYMMDD" and is only included in the ESGF directory structure (see [4. ESGF Directory Structure](#4-esgf-directory-structure)).
 
+<a id="def-frequency"></a>
 `frequency` (CV) is the output frequency indicator: 1hr - 1 hourly, 3hr - 3 hourly, 6hr - 6 hourly, day - daily, mon - monthly, and fx - invariant fields; see the [CORDEX-CMIP6 frequency CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_frequency.json).
 
+<a id="def-start-time"></a>
 `StartTime` and `EndTime` (structured form) indicate the time span of the file content.
 The format is YYYY[MM[DD[hhmm]]], i.e. the year is represented by 4 digits, while the month, day, hour, and minutes are represented by exactly 2 digits, if they are present at all (monthly output - YYYYMM, daily – YYYYMMDD, sub-daily - YYYYMMDDhhmm).
 The `StartTime` and `EndTime` of sub-daily instantaneous and average data are based on the time values of the first and last record in the file.
@@ -74,6 +84,7 @@ The two dates are separated by a dash.
 All time stamps refer to UTC.
 Constant fields (`frequency=fx`) do not have the `StartTime`-`EndTime` element in their file names.
 
+<a id="def-activity-id"></a>
 `activity_id` (CV) - an identifier of different CORDEX activities such as dynamical downscaling (DD) and empirical-statistical downscaling (ESD), see the [CORDEX-CMIP6 activity id CV](https://github.com/WCRP-CORDEX/cordex-cmip6-cv/blob/main/CORDEX-CMIP6_activity_id.json).
 Regarding the activity described in this document (dynamical downscaling on standard CORDEX domains at continental scale; CORDEX-Domain), "DD" is the only option.
 However, other values are possible for other activities under the CORDEX-CMIP6 project, such as Flagship Pilot Studies (FPS), which will provide their own archiving specifications.
@@ -81,6 +92,7 @@ However, other values are possible for other activities under the CORDEX-CMIP6 p
 This is useful for faceted searches.
 In this case, the first entry in the list will be the only value used in the DRS path (see [Section 4](#4-esgf-directory-structure)).
 
+<a id="def-project-id"></a>
 `project_id` (CV) - project identifier ("CORDEX-CMIP6" is the only option)
 
 ## 2. Global attributes

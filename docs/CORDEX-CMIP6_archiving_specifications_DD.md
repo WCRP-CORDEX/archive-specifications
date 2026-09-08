@@ -104,7 +104,7 @@ In this case, the first entry in the list will be the only value used in the DRS
 Table 1 notes:
 
 
- 1. <span id="grid-note"></span>The "grid" global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid (see note 10 in [CMIP6 DRS](https://goo.gl/v1drZl)).  Here are some examples:
+ 1. <a id="grid-note"></a>The `grid` global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid (see note 10 in [CMIP6 DRS](https://goo.gl/v1drZl)).  Here are some examples:
 ```python
    grid = "Lambert conic conformal with 25 km grid spacing"
    grid = "Rotated-pole latitude-longitude with 0.22 degree grid spacing"
@@ -116,7 +116,7 @@ Table 1 notes:
 
  3. `tracking_id` must be of the form `<PID>/<uuid>` where PID is a Persistent Identifier (`hdl:21.14103` for CORDEX-CMIP6) and  uuid is a Universally Unique IDentifier e.g. `hdl:21.14103/187fcd6c-7cc6-11ee-9481-7824afb1963b`. The `tracking_id` should be unique for each CORDEX-CMIP6 file published in ESGF.  The `<uuid>` should be generated using the OSSP utility which supports a number of different DCE 1.1 variant UUID options.  For CORDEX-CMIP6, version 4 (random number based) is required.  Download the software from [OSSP uuid](http://www.ossp.org/pkg/lib/uuid/). (see note 15 in [CMIP6 DRS](https://goo.gl/v1drZl)).
 
- 4. <span id="title-note"></span>The "title" global attribute can be used to provide a short summary of the dataset in the file. There is no standard form used to record this information, but a suggestion is shown below. Variant labels would be optional, but useful to disambiguate in case of downscaling several ensemble members:
+ 4. <a id="title-note"></a>The `title` global attribute can be used to provide a short summary of the dataset in the file. There is no standard form used to record this information, but a suggestion is shown below. Variant labels would be optional, but useful to disambiguate in case of downscaling several ensemble members:
 ```python
    title = f"{institution_id} {source_id} downscaling of {driving_source_id} {driving_experiment_id} [{driving_variant_label}] for {project_id} {domain_id}"
    title = "MyINST MyRCM-2-1 downscaling of MyGCM6-2 ssp370 for CORDEX-CMIP6 AFR-12"

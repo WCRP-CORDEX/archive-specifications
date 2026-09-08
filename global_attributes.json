@@ -117,7 +117,7 @@
     "examples": "-",
     "cordex_cmip5_attribute": "history",
     "form": "free form",
-    "when_required": "never"
+    "when_required": "never, but recommended by CF"
   },
   "institution": {
     "name": "institution",
@@ -199,6 +199,14 @@
     "form": "CV",
     "when_required": "always"
   },
+  "title": {
+    "name": "title",
+    "description": "a short, human-readable summary of the dataset's contents",
+    "examples": "see note 4",
+    "cordex_cmip5_attribute": "title",
+    "form": "free form",
+    "when_required": "never, but recommended by CF"
+  },
   "tracking_id": {
     "name": "tracking_id",
     "description": "unique file identifier",
@@ -229,6 +237,6 @@
     "examples": "see note 2",
     "cordex_cmip5_attribute": "-",
     "form": "free form",
-    "when_required": "never but recommended"
+    "when_required": "never, but recommended"
   }
 }

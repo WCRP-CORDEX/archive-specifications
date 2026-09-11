@@ -4,9 +4,9 @@ pdf: true
 ---
 # CORDEX-CMIP6 Archiving Specifications for Dynamical Downscaling
 
-XXX Sep 2026
+11 Sep 2026
 
-DOI: [10.5281/zenodo.XXX](https://doi.org/10.5281/zenodo.XXX)
+DOI: [10.5281/zenodo.22711462](https://doi.org/10.5281/zenodo.22711462)
 
 Grigory Nikulin<sup>1</sup>, Lars Buntemeyer<sup>2</sup>, Jesús Fernández<sup>3</sup>, Seth McGinnis<sup>4</sup> and Jason P. Evans<sup>5</sup>
 
@@ -118,7 +118,7 @@ Table 1 notes:
 
  4. <a id="title-note"></a>The `title` global attribute can be used to provide a short summary of the dataset in the file. There is no standard form used to record this information, but a suggestion is shown below. Variant labels would be optional, but useful to disambiguate in case of downscaling several ensemble members:
 ```python
-   title = f"{institution_id} {source_id} downscaling of {driving_source_id} {driving_experiment_id} [{driving_variant_label}] for {project_id} {domain_id}"
+   title = f"{institution_id} {source_id} downscaling of {driving_source_id} {driving_experiment_id} {driving_variant_label} for {project_id} {domain_id}"
    title = "MyINST MyRCM-2-1 downscaling of MyGCM6-2 ssp370 for CORDEX-CMIP6 AFR-12"
    title = "MyINST MyRCM-2-1 downscaling of MyGCM6-2 ssp370 r14i1p1f1 for CORDEX-CMIP6 AFR-12"
 ```
@@ -521,7 +521,7 @@ data:
 
 | Version | Date | Comment |
 | :---: | :---- | :---- |
-| [v4](XXX) | XXX | <ul><li>Recommend `esgf-qa` orchestrator of QA/QC ([#51](https://github.com/WCRP-CORDEX/archive-specifications/issues/51)).<li>Link full examples of CMORized files ([#52](https://github.com/WCRP-CORDEX/archive-specifications/issues/52)).<li>Suggest building rule for CF `title` attribute ([#53](https://github.com/WCRP-CORDEX/archive-specifications/issues/53)).</ul> |
+| [v4](https://doi.org/10.5281/zenodo.22711462) | 2026-09-11 | <ul><li>Recommend `esgf-qa` orchestrator of QA/QC ([#51](https://github.com/WCRP-CORDEX/archive-specifications/issues/51)).<li>Link full examples of CMORized files ([#52](https://github.com/WCRP-CORDEX/archive-specifications/issues/52)).<li>Suggest building rule for CF `title` attribute ([#53](https://github.com/WCRP-CORDEX/archive-specifications/issues/53)).</ul> |
 | [v3](https://doi.org/10.5281/zenodo.20274448) | 2026-05-26 | <ul><li>First version official in mkdocs at https://wcrp-cordex.github.io/archive-specifications/CORDEX-CMIP6_archiving_specifications_DD.<li>Update user support target repository.<li>Fix inconsistency in `driving_experiment` attribute for the evaluation experiment ([#26](https://github.com/WCRP-CORDEX/archive-specifications/issues/26)).<li>Fix case in `long_name` of LCC projected coordinates ([#27](https://github.com/WCRP-CORDEX/archive-specifications/issues/27)).<li>Skip mandatory nature of `grid_mapping` in non-projected grids ([#29](https://github.com/WCRP-CORDEX/archive-specifications/issues/29)).<li>Add quality checker info and repacking recommendation ([#38](https://github.com/WCRP-CORDEX/archive-specifications/issues/38)).<li>Allow for different grids for different model components of the same simulation ([#40](https://github.com/WCRP-CORDEX/archive-specifications/issues/40)).<li>Allow for multiple `activity_id`s ([#45](https://github.com/WCRP-CORDEX/archive-specifications/issues/45)).<li>Some smaller updates and rewording([#30](https://github.com/WCRP-CORDEX/archive-specifications/issues/30) [#49](https://github.com/WCRP-CORDEX/archive-specifications/issues/49)).</ul> |
 | [v2](https://doi.org/10.5281/zenodo.15047096) | 2025-03-21 | <ul><li>Change of project_id (CORDEX to CORDEX-CMIP6) due to ESGF publication requirements ([#22](https://github.com/WCRP-CORDEX/archive-specifications/issues/22)) <li>`mip_era` is excluded from the ESGF directory structure and search facets mapping, must be presented as the global attribute only ([#24](https://github.com/WCRP-CORDEX/archive-specifications/issues/24)) <li>Fixed example for `creation_date` global attribute ([#19](https://github.com/WCRP-CORDEX/archive-specifications/issues/19)) <li>New example (13.5) illustrating scalar coordinate variables for height ([#18](https://github.com/WCRP-CORDEX/archive-specifications/issues/18)) <li>Specify time coordinate origin, but not specific formatting ([#5](https://github.com/WCRP-CORDEX/archive-specifications/issues/5)) <li>Allow grid mapping variable to match the grid_mapping_name ([#17](https://github.com/WCRP-CORDEX/archive-specifications/issues/17))</ul> |
 | [v1](https://doi.org/10.5281/zenodo.10961069) | 2024-04-10 | Initial release on April, 10th, 2024. |
